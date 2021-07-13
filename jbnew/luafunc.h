@@ -29,6 +29,7 @@
 -(void)loadLuaWithName:(NSString *)luaPath imgDicPath:(NSString*)imgDicPath;
 -(void)scriptStop;
 -(int)simulateTouch:(int)pathIndex atPoint:(CGPoint)point withType:(X5_TSPRE_TYPE)type;
+-(void)luaClean;
 @end
 
 extern bool isLuaRunning;

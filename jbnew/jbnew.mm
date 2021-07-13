@@ -6,35 +6,41 @@
 #import "threadAndAlert.h"
 #import "luafunc.h"
 #import "NSObject+IOFamilyDlsym.h"
-BOOL isShow = FALSE;
 
 
+static CFTimeInterval startTime = 0;
 void handle_event (void* target, void* filename, IOHIDEventQueueRef service, IOHIDEventRef event){
     if (orig_IOHIDEventGetType(event)==kIOHIDEventTypeKeyboard){
         int usage = orig_IOHIDEventGetIntegerValue(event, kIOHIDEventFieldKeyboardUsage);
-        XLog(@"检测到按键：%d  0x%x", usage, usage);
-        if (usage == 0xe9 || usage == 0xea ) { 
-            XLog(@"检测到音量键按下  %d",isShow);
+        if ( ( usage == 0xea)
+            && orig_IOHIDEventGetIntegerValue(event, kIOHIDEventFieldKeyboardDown) == 0 ) {
+            CFTimeInterval currentTime = CACurrentMediaTime();
+
             id talc = [threadAndAlert managerCenter];
             if ([[luaManager managerCenter] isLuaRunning]) {
                 XLog(@"check is running, stop now")
-                isShow = TRUE;
                 [talc showAlertMsg:@"Stop"];
                 [[luaManager managerCenter] scriptStop];
             }
-            else if(isShow == FALSE)
-            {
-                XLog(@"isShow == FALSE")
-                isShow = TRUE;
-                XLog(@"not running, show menu")
-                [talc showAlertBegin:nil msg:nil];
+            else {
+                if (currentTime - startTime > 0.4){
+                    startTime = CACurrentMediaTime();
+                    return;
+                }
+                if([talc isShow] == FALSE){
+
+                    XLog(@"not running, show menu")
+                    [talc showAlertBegin:nil msg:nil];
+                }
             }
+                
         }
     }
     
-    else if (orig_IOHIDEventGetType(event) == kIOHIDEventTypeDigitizer){
+    else if (orig_IOHIDEventGetType(event) == kIOHIDEventTypeDigitizer &&
+             [[luaManager managerCenter] senderID] == 0
+             ){
         [[luaManager managerCenter] setSenderID:orig_IOHIDEventGetSenderID(event)];
-        XLog(@"sender id is: %qX", [[luaManager managerCenter] senderID]);
     }
 }
 
@@ -44,7 +50,7 @@ void setListen(){
     if (ioHIDEventSystem == NULL) {
         XLog(@"IOHIDEventSystemClientCreate failed.\n");
     }
-    orig_IOHIDEventSystemClientScheduleWithRunLoop(ioHIDEventSystem, CFRunLoopGetMain(), kCFRunLoopDefaultMode);
+    orig_IOHIDEventSystemClientScheduleWithRunLoop(ioHIDEventSystem, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
     orig_IOHIDEventSystemClientRegisterEventCallback(ioHIDEventSystem, handle_event, NULL, NULL);
 
     XLog(@"TAG2:listenner add successful");
@@ -71,10 +77,10 @@ void setListen(){
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class SpringBoard; 
-static void (*_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$)(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); 
+@class SBDisplayBrightnessController; @class SpringBoard; 
+static void (*_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$)(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); static void (*_logos_orig$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$)(_LOGOS_SELF_TYPE_NORMAL SBDisplayBrightnessController* _LOGOS_SELF_CONST, SEL, float); static void _logos_method$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$(_LOGOS_SELF_TYPE_NORMAL SBDisplayBrightnessController* _LOGOS_SELF_CONST, SEL, float); 
 
-#line 52 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
+#line 58 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
 
 static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, id application) {
     XLog(@"jbnew")
@@ -82,6 +88,13 @@ static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(
     _logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$(self, _cmd, application);
 }
 
+
+
+static void _logos_method$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$(_LOGOS_SELF_TYPE_NORMAL SBDisplayBrightnessController* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, float arg1) {
+    XLog(@"setBrightnessLevel %f",arg1)
+    _logos_orig$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$(self, _cmd, arg1);
+}
+
 static __attribute__((constructor)) void _logosLocalInit() {
-{Class _logos_class$_ungrouped$SpringBoard = objc_getClass("SpringBoard"); { MSHookMessageEx(_logos_class$_ungrouped$SpringBoard, @selector(applicationDidFinishLaunching:), (IMP)&_logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$, (IMP*)&_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$);}} }
-#line 59 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
+{Class _logos_class$_ungrouped$SpringBoard = objc_getClass("SpringBoard"); { MSHookMessageEx(_logos_class$_ungrouped$SpringBoard, @selector(applicationDidFinishLaunching:), (IMP)&_logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$, (IMP*)&_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$);}Class _logos_class$_ungrouped$SBDisplayBrightnessController = objc_getClass("SBDisplayBrightnessController"); { MSHookMessageEx(_logos_class$_ungrouped$SBDisplayBrightnessController, @selector(setBrightnessLevel:), (IMP)&_logos_method$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$, (IMP*)&_logos_orig$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$);}} }
+#line 72 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"

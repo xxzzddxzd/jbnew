@@ -13,10 +13,13 @@
 
 @implementation threadAndAlert
 static threadAndAlert *center = nil;
-extern BOOL isShow;
 
+-(bool)getIsShow{
+    return self.isShow;
+}
 -(void)showAlertBegin:(NSString *)title msg:(NSString *)message
 {
+    self.isShow=true;
     NSString * path =[NSString stringWithUTF8String:LUA_DIC];
     NSArray * ary =  [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
     XLog(@"%@ %@",path,ary);
@@ -44,7 +47,7 @@ extern BOOL isShow;
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    isShow = FALSE;
+    self.isShow = FALSE;
     NSLog(@"#################");
     NSLog(@"tag:%ld", (long)alertView.tag);
     switch (alertView.tag) {
@@ -85,8 +88,7 @@ extern BOOL isShow;
     }
 }
 
--(void)x5ThreadDetach:(_x5ThreadBlock) block
-{
+-(void)x5ThreadDetach:(_x5ThreadBlock) block{
     [NSThread detachNewThreadSelector:@selector(perfrombgg:) toTarget:center withObject:[[block copy] autorelease]];
 }
 
@@ -100,6 +102,7 @@ extern BOOL isShow;
 
 -(void)showAlertMsg:(NSString *)title //msg:(NSString *)message
 {
+    self.isShow=true;
     UIAlertView * alert = [[UIAlertView alloc]initWithTitle:title
                                                     message:nil
                                                    delegate:self
@@ -108,5 +111,4 @@ extern BOOL isShow;
     [alert setTag:2];
     [alert show];
 }
-
 @end

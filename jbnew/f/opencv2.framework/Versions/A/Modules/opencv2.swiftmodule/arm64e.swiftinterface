@@ -1,0 +1,910 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target arm64e-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name opencv2
+import Foundation
+import Swift
+@_exported import opencv2
+extension Calib3d {
+  @nonobjc public class func solveP3P(objectPoints: opencv2.Mat, imagePoints: opencv2.Mat, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], flags: Swift.Int32) -> Swift.Int32
+}
+extension Calib3d {
+  @nonobjc public class func solvePnPGeneric(objectPoints: opencv2.Mat, imagePoints: opencv2.Mat, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], useExtrinsicGuess: Swift.Bool, flags: opencv2.SolvePnPMethod, rvec: opencv2.Mat, tvec: opencv2.Mat, reprojectionError: opencv2.Mat) -> Swift.Int32
+}
+extension Calib3d {
+  @nonobjc public class func solvePnPGeneric(objectPoints: opencv2.Mat, imagePoints: opencv2.Mat, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], useExtrinsicGuess: Swift.Bool, flags: opencv2.SolvePnPMethod, rvec: opencv2.Mat, tvec: opencv2.Mat) -> Swift.Int32
+}
+extension Calib3d {
+  @nonobjc public class func solvePnPGeneric(objectPoints: opencv2.Mat, imagePoints: opencv2.Mat, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], useExtrinsicGuess: Swift.Bool, flags: opencv2.SolvePnPMethod, rvec: opencv2.Mat) -> Swift.Int32
+}
+extension Calib3d {
+  @nonobjc public class func solvePnPGeneric(objectPoints: opencv2.Mat, imagePoints: opencv2.Mat, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], useExtrinsicGuess: Swift.Bool, flags: opencv2.SolvePnPMethod) -> Swift.Int32
+}
+extension Calib3d {
+  @nonobjc public class func solvePnPGeneric(objectPoints: opencv2.Mat, imagePoints: opencv2.Mat, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], useExtrinsicGuess: Swift.Bool) -> Swift.Int32
+}
+extension Calib3d {
+  @nonobjc public class func solvePnPGeneric(objectPoints: opencv2.Mat, imagePoints: opencv2.Mat, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat]) -> Swift.Int32
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCamera(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], stdDeviationsIntrinsics: opencv2.Mat, stdDeviationsExtrinsics: opencv2.Mat, perViewErrors: opencv2.Mat, flags: Swift.Int32, criteria: opencv2.TermCriteria) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCamera(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], stdDeviationsIntrinsics: opencv2.Mat, stdDeviationsExtrinsics: opencv2.Mat, perViewErrors: opencv2.Mat, flags: Swift.Int32) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCamera(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], stdDeviationsIntrinsics: opencv2.Mat, stdDeviationsExtrinsics: opencv2.Mat, perViewErrors: opencv2.Mat) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCamera(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], flags: Swift.Int32, criteria: opencv2.TermCriteria) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCamera(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], flags: Swift.Int32) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCamera(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat]) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCameraRO(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, iFixedPoint: Swift.Int32, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], newObjPoints: opencv2.Mat, stdDeviationsIntrinsics: opencv2.Mat, stdDeviationsExtrinsics: opencv2.Mat, stdDeviationsObjPoints: opencv2.Mat, perViewErrors: opencv2.Mat, flags: Swift.Int32, criteria: opencv2.TermCriteria) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCameraRO(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, iFixedPoint: Swift.Int32, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], newObjPoints: opencv2.Mat, stdDeviationsIntrinsics: opencv2.Mat, stdDeviationsExtrinsics: opencv2.Mat, stdDeviationsObjPoints: opencv2.Mat, perViewErrors: opencv2.Mat, flags: Swift.Int32) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCameraRO(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, iFixedPoint: Swift.Int32, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], newObjPoints: opencv2.Mat, stdDeviationsIntrinsics: opencv2.Mat, stdDeviationsExtrinsics: opencv2.Mat, stdDeviationsObjPoints: opencv2.Mat, perViewErrors: opencv2.Mat) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCameraRO(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, iFixedPoint: Swift.Int32, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], newObjPoints: opencv2.Mat, flags: Swift.Int32, criteria: opencv2.TermCriteria) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCameraRO(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, iFixedPoint: Swift.Int32, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], newObjPoints: opencv2.Mat, flags: Swift.Int32) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrateCameraRO(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], imageSize: opencv2.Size2i, iFixedPoint: Swift.Int32, cameraMatrix: opencv2.Mat, distCoeffs: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], newObjPoints: opencv2.Mat) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func decomposeHomographyMat(H: opencv2.Mat, K: opencv2.Mat, rotations: inout [opencv2.Mat], translations: inout [opencv2.Mat], normals: inout [opencv2.Mat]) -> Swift.Int32
+}
+extension Calib3d {
+  @nonobjc public class func calibrate(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], image_size: opencv2.Size2i, K: opencv2.Mat, D: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], flags: Swift.Int32, criteria: opencv2.TermCriteria) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrate(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], image_size: opencv2.Size2i, K: opencv2.Mat, D: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat], flags: Swift.Int32) -> Swift.Double
+}
+extension Calib3d {
+  @nonobjc public class func calibrate(objectPoints: [opencv2.Mat], imagePoints: [opencv2.Mat], image_size: opencv2.Size2i, K: opencv2.Mat, D: opencv2.Mat, rvecs: inout [opencv2.Mat], tvecs: inout [opencv2.Mat]) -> Swift.Double
+}
+extension ByteVector {
+  public convenience init(_ array: [Swift.Int8])
+  public convenience init(_ array: [Swift.UInt8])
+  public subscript(index: Swift.Int) -> Swift.Int8 {
+    get
+  }
+  public var array: [Swift.Int8] {
+    get
+  }
+  public var unsignedArray: [Swift.UInt8] {
+    get
+  }
+}
+extension ByteVector : Swift.Sequence {
+  public typealias Iterator = opencv2.ByteVectorIterator
+  public func makeIterator() -> opencv2.ByteVectorIterator
+  public typealias Element = opencv2.ByteVectorIterator.Element
+}
+public struct ByteVectorIterator : Swift.IteratorProtocol {
+  public typealias Element = Swift.Int8
+  public mutating func next() -> Swift.Int8?
+}
+extension Core {
+  @nonobjc public class func meanStdDev(src: opencv2.Mat, mean: inout [Swift.Double], stddev: inout [Swift.Double], mask: opencv2.Mat)
+}
+extension Core {
+  @nonobjc public class func meanStdDev(src: opencv2.Mat, mean: inout [Swift.Double], stddev: inout [Swift.Double])
+}
+extension Core {
+  @nonobjc public class func split(m: opencv2.Mat, mv: inout [opencv2.Mat])
+}
+extension Core {
+  @nonobjc public class func mixChannels(src: [opencv2.Mat], dst: [opencv2.Mat], fromTo: [Swift.Int32])
+}
+extension CvType {
+  public static var CV_8U: Swift.Int32
+  public static var CV_8S: Swift.Int32
+  public static var CV_16U: Swift.Int32
+  public static var CV_16S: Swift.Int32
+  public static var CV_32S: Swift.Int32
+  public static var CV_32F: Swift.Int32
+  public static var CV_64F: Swift.Int32
+  public static var CV_16F: Swift.Int32
+  public static var CV_8UC1: Swift.Int32
+  public static var CV_8UC2: Swift.Int32
+  public static var CV_8UC3: Swift.Int32
+  public static var CV_8UC4: Swift.Int32
+  public static var CV_8SC1: Swift.Int32
+  public static var CV_8SC2: Swift.Int32
+  public static var CV_8SC3: Swift.Int32
+  public static var CV_8SC4: Swift.Int32
+  public static var CV_16UC1: Swift.Int32
+  public static var CV_16UC2: Swift.Int32
+  public static var CV_16UC3: Swift.Int32
+  public static var CV_16UC4: Swift.Int32
+  public static var CV_16SC1: Swift.Int32
+  public static var CV_16SC2: Swift.Int32
+  public static var CV_16SC3: Swift.Int32
+  public static var CV_16SC4: Swift.Int32
+  public static var CV_32SC1: Swift.Int32
+  public static var CV_32SC2: Swift.Int32
+  public static var CV_32SC3: Swift.Int32
+  public static var CV_32SC4: Swift.Int32
+  public static var CV_32FC1: Swift.Int32
+  public static var CV_32FC2: Swift.Int32
+  public static var CV_32FC3: Swift.Int32
+  public static var CV_32FC4: Swift.Int32
+  public static var CV_64FC1: Swift.Int32
+  public static var CV_64FC2: Swift.Int32
+  public static var CV_64FC3: Swift.Int32
+  public static var CV_64FC4: Swift.Int32
+  public static var CV_16FC1: Swift.Int32
+  public static var CV_16FC2: Swift.Int32
+  public static var CV_16FC3: Swift.Int32
+  public static var CV_16FC4: Swift.Int32
+  public static var CV_CN_MAX: Swift.Int
+  public static var CV_CN_SHIFT: Swift.Int
+  public static var CV_DEPTH_MAX: Swift.Int
+  public static func CV_8UC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_8SC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_16UC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_16SC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_32SC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_32FC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_64FC(_ channels: Swift.Int32) -> Swift.Int32
+  public static func CV_16FC(_ channels: Swift.Int32) -> Swift.Int32
+}
+extension DoubleVector {
+  public convenience init(_ array: [Swift.Double])
+  public subscript(index: Swift.Int) -> Swift.Double {
+    get
+  }
+  public var array: [Swift.Double] {
+    get
+  }
+}
+extension DoubleVector : Swift.Sequence {
+  public typealias Iterator = opencv2.DoubleVectorIterator
+  public func makeIterator() -> opencv2.DoubleVectorIterator
+  public typealias Element = opencv2.DoubleVectorIterator.Element
+}
+public struct DoubleVectorIterator : Swift.IteratorProtocol {
+  public typealias Element = Swift.Double
+  public mutating func next() -> Swift.Double?
+}
+extension FloatVector {
+  public convenience init(_ array: [Swift.Float])
+  public subscript(index: Swift.Int) -> Swift.Float {
+    get
+  }
+  public var array: [Swift.Float] {
+    get
+  }
+}
+extension FloatVector : Swift.Sequence {
+  public typealias Iterator = opencv2.FloatVectorIterator
+  public func makeIterator() -> opencv2.FloatVectorIterator
+  public typealias Element = opencv2.FloatVectorIterator.Element
+}
+public struct FloatVectorIterator : Swift.IteratorProtocol {
+  public typealias Element = Swift.Float
+  public mutating func next() -> Swift.Float?
+}
+extension IntVector {
+  public convenience init(_ array: [Swift.Int32])
+  public subscript(index: Swift.Int) -> Swift.Int32 {
+    get
+  }
+  public var array: [Swift.Int32] {
+    get
+  }
+}
+extension IntVector : Swift.Sequence {
+  public typealias Iterator = opencv2.IntVectorIterator
+  public func makeIterator() -> opencv2.IntVectorIterator
+  public typealias Element = opencv2.IntVectorIterator.Element
+}
+public struct IntVectorIterator : Swift.IteratorProtocol {
+  public typealias Element = Swift.Int32
+  public mutating func next() -> Swift.Int32?
+}
+public typealias T2<T> = (T, T)
+public typealias T3<T> = (T, T, T)
+public typealias T4<T> = (T, T, T, T)
+extension Mat {
+  public convenience init(rows: Swift.Int32, cols: Swift.Int32, type: Swift.Int32, data: [Swift.Int8])
+  public convenience init(rows: Swift.Int32, cols: Swift.Int32, type: Swift.Int32, data: [Swift.Int8], step: Swift.Int)
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Int8]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.UInt8]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Double]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Float]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Int32]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.Int16]) throws -> Swift.Int32
+  @discardableResult
+  public func get(indices: [Swift.Int32], data: inout [Swift.UInt16]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Int8]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.UInt8]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Double]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Float]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Int32]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.Int16]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32, data: inout [Swift.UInt16]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Int8]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.UInt8]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Int8], offset: Swift.Int, length: Swift.Int32) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Double]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Float]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Int32]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.Int16]) throws -> Swift.Int32
+  @discardableResult
+  public func put(indices: [Swift.Int32], data: [Swift.UInt16]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Int8]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.UInt8]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Int8], offset: Swift.Int, length: Swift.Int32) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Double]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Float]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Int32]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.Int16]) throws -> Swift.Int32
+  @discardableResult
+  public func put(row: Swift.Int32, col: Swift.Int32, data: [Swift.UInt16]) throws -> Swift.Int32
+  @discardableResult
+  public func get(row: Swift.Int32, col: Swift.Int32) -> [Swift.Double]
+  @discardableResult
+  public func get(indices: [Swift.Int32]) -> [Swift.Double]
+}
+public protocol Atable {
+  static func getAt(m: opencv2.Mat, indices: [Swift.Int32]) -> Self
+  static func putAt(m: opencv2.Mat, indices: [Swift.Int32], v: Self)
+  static func getAt2c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Self, Self)
+  static func putAt2c(m: opencv2.Mat, indices: [Swift.Int32], v: (Self, Self))
+  static func getAt3c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Self, Self, Self)
+  static func putAt3c(m: opencv2.Mat, indices: [Swift.Int32], v: (Self, Self, Self))
+  static func getAt4c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Self, Self, Self, Self)
+  static func putAt4c(m: opencv2.Mat, indices: [Swift.Int32], v: (Self, Self, Self, Self))
+}
+@_hasMissingDesignatedInitializers public class MatAt<N> where N : opencv2.Atable {
+  public var v: N {
+    get
+    set(value)
+  }
+  public var v2c: (N, N) {
+    get
+    set(value)
+  }
+  public var v3c: (N, N, N) {
+    get
+    set(value)
+  }
+  public var v4c: (N, N, N, N) {
+    get
+    set(value)
+  }
+  @objc deinit
+}
+extension UInt8 : opencv2.Atable {
+  public static func getAt(m: opencv2.Mat, indices: [Swift.Int32]) -> Swift.UInt8
+  public static func putAt(m: opencv2.Mat, indices: [Swift.Int32], v: Swift.UInt8)
+  public static func getAt2c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.UInt8, Swift.UInt8)
+  public static func putAt2c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.UInt8, Swift.UInt8))
+  public static func getAt3c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.UInt8, Swift.UInt8, Swift.UInt8)
+  public static func putAt3c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.UInt8, Swift.UInt8, Swift.UInt8))
+  public static func getAt4c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.UInt8, Swift.UInt8, Swift.UInt8, Swift.UInt8)
+  public static func putAt4c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.UInt8, Swift.UInt8, Swift.UInt8, Swift.UInt8))
+}
+extension Int8 : opencv2.Atable {
+  public static func getAt(m: opencv2.Mat, indices: [Swift.Int32]) -> Swift.Int8
+  public static func putAt(m: opencv2.Mat, indices: [Swift.Int32], v: Swift.Int8)
+  public static func getAt2c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Int8, Swift.Int8)
+  public static func putAt2c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Int8, Swift.Int8))
+  public static func getAt3c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Int8, Swift.Int8, Swift.Int8)
+  public static func putAt3c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Int8, Swift.Int8, Swift.Int8))
+  public static func getAt4c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Int8, Swift.Int8, Swift.Int8, Swift.Int8)
+  public static func putAt4c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Int8, Swift.Int8, Swift.Int8, Swift.Int8))
+}
+extension Double : opencv2.Atable {
+  public static func getAt(m: opencv2.Mat, indices: [Swift.Int32]) -> Swift.Double
+  public static func putAt(m: opencv2.Mat, indices: [Swift.Int32], v: Swift.Double)
+  public static func getAt2c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Double, Swift.Double)
+  public static func putAt2c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Double, Swift.Double))
+  public static func getAt3c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Double, Swift.Double, Swift.Double)
+  public static func putAt3c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Double, Swift.Double, Swift.Double))
+  public static func getAt4c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Double, Swift.Double, Swift.Double, Swift.Double)
+  public static func putAt4c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Double, Swift.Double, Swift.Double, Swift.Double))
+}
+extension Float : opencv2.Atable {
+  public static func getAt(m: opencv2.Mat, indices: [Swift.Int32]) -> Swift.Float
+  public static func putAt(m: opencv2.Mat, indices: [Swift.Int32], v: Swift.Float)
+  public static func getAt2c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Float, Swift.Float)
+  public static func putAt2c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Float, Swift.Float))
+  public static func getAt3c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Float, Swift.Float, Swift.Float)
+  public static func putAt3c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Float, Swift.Float, Swift.Float))
+  public static func getAt4c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Float, Swift.Float, Swift.Float, Swift.Float)
+  public static func putAt4c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Float, Swift.Float, Swift.Float, Swift.Float))
+}
+extension Int32 : opencv2.Atable {
+  public static func getAt(m: opencv2.Mat, indices: [Swift.Int32]) -> Swift.Int32
+  public static func putAt(m: opencv2.Mat, indices: [Swift.Int32], v: Swift.Int32)
+  public static func getAt2c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Int32, Swift.Int32)
+  public static func putAt2c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Int32, Swift.Int32))
+  public static func getAt3c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Int32, Swift.Int32, Swift.Int32)
+  public static func putAt3c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Int32, Swift.Int32, Swift.Int32))
+  public static func getAt4c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Int32, Swift.Int32, Swift.Int32, Swift.Int32)
+  public static func putAt4c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Int32, Swift.Int32, Swift.Int32, Swift.Int32))
+}
+extension UInt16 : opencv2.Atable {
+  public static func getAt(m: opencv2.Mat, indices: [Swift.Int32]) -> Swift.UInt16
+  public static func putAt(m: opencv2.Mat, indices: [Swift.Int32], v: Swift.UInt16)
+  public static func getAt2c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.UInt16, Swift.UInt16)
+  public static func putAt2c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.UInt16, Swift.UInt16))
+  public static func getAt3c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.UInt16, Swift.UInt16, Swift.UInt16)
+  public static func putAt3c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.UInt16, Swift.UInt16, Swift.UInt16))
+  public static func getAt4c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.UInt16, Swift.UInt16, Swift.UInt16, Swift.UInt16)
+  public static func putAt4c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.UInt16, Swift.UInt16, Swift.UInt16, Swift.UInt16))
+}
+extension Int16 : opencv2.Atable {
+  public static func getAt(m: opencv2.Mat, indices: [Swift.Int32]) -> Swift.Int16
+  public static func putAt(m: opencv2.Mat, indices: [Swift.Int32], v: Swift.Int16)
+  public static func getAt2c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Int16, Swift.Int16)
+  public static func putAt2c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Int16, Swift.Int16))
+  public static func getAt3c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Int16, Swift.Int16, Swift.Int16)
+  public static func putAt3c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Int16, Swift.Int16, Swift.Int16))
+  public static func getAt4c(m: opencv2.Mat, indices: [Swift.Int32]) -> (Swift.Int16, Swift.Int16, Swift.Int16, Swift.Int16)
+  public static func putAt4c(m: opencv2.Mat, indices: [Swift.Int32], v: (Swift.Int16, Swift.Int16, Swift.Int16, Swift.Int16))
+}
+extension Mat {
+  public func at<N>(row: Swift.Int32, col: Swift.Int32) -> opencv2.MatAt<N> where N : opencv2.Atable
+  public func at<N>(indices: [Swift.Int32]) -> opencv2.MatAt<N> where N : opencv2.Atable
+}
+public typealias Rect = opencv2.Rect2i
+public typealias Point = opencv2.Point2i
+public typealias Size = opencv2.Size2i
+extension Dnn {
+  @nonobjc public class func readNetFromDarknet(bufferCfg: [Swift.UInt8], bufferModel: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func readNetFromDarknet(bufferCfg: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func readNetFromCaffe(bufferProto: [Swift.UInt8], bufferModel: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func readNetFromCaffe(bufferProto: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func readNetFromTensorflow(bufferModel: [Swift.UInt8], bufferConfig: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func readNetFromTensorflow(bufferModel: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func readNet(framework: Swift.String, bufferModel: [Swift.UInt8], bufferConfig: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func readNet(framework: Swift.String, bufferModel: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func readNetFromModelOptimizer(bufferModelConfig: [Swift.UInt8], bufferWeights: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func readNetFromONNX(buffer: [Swift.UInt8]) -> opencv2.Net
+}
+extension Dnn {
+  @nonobjc public class func imagesFromBlob(blob_: opencv2.Mat, images_: inout [opencv2.Mat])
+}
+extension Dnn {
+  @nonobjc public class func NMSBoxes(bboxes: [opencv2.Rect2d], scores: [Swift.Float], score_threshold: Swift.Float, nms_threshold: Swift.Float, indices: inout [Swift.Int32], eta: Swift.Float, top_k: Swift.Int32)
+}
+extension Dnn {
+  @nonobjc public class func NMSBoxes(bboxes: [opencv2.Rect2d], scores: [Swift.Float], score_threshold: Swift.Float, nms_threshold: Swift.Float, indices: inout [Swift.Int32], eta: Swift.Float)
+}
+extension Dnn {
+  @nonobjc public class func NMSBoxes(bboxes: [opencv2.Rect2d], scores: [Swift.Float], score_threshold: Swift.Float, nms_threshold: Swift.Float, indices: inout [Swift.Int32])
+}
+extension Dnn {
+  @nonobjc public class func NMSBoxes(bboxes: [opencv2.RotatedRect], scores: [Swift.Float], score_threshold: Swift.Float, nms_threshold: Swift.Float, indices: inout [Swift.Int32], eta: Swift.Float, top_k: Swift.Int32)
+}
+extension Dnn {
+  @nonobjc public class func NMSBoxes(bboxes: [opencv2.RotatedRect], scores: [Swift.Float], score_threshold: Swift.Float, nms_threshold: Swift.Float, indices: inout [Swift.Int32], eta: Swift.Float)
+}
+extension Dnn {
+  @nonobjc public class func NMSBoxes(bboxes: [opencv2.RotatedRect], scores: [Swift.Float], score_threshold: Swift.Float, nms_threshold: Swift.Float, indices: inout [Swift.Int32])
+}
+extension DetectionModel {
+  @nonobjc public func detect(frame: opencv2.Mat, classIds: inout [Swift.Int32], confidences: inout [Swift.Float], boxes: inout [opencv2.Rect2i], confThreshold: Swift.Float, nmsThreshold: Swift.Float)
+}
+extension DetectionModel {
+  @nonobjc public func detect(frame: opencv2.Mat, classIds: inout [Swift.Int32], confidences: inout [Swift.Float], boxes: inout [opencv2.Rect2i], confThreshold: Swift.Float)
+}
+extension DetectionModel {
+  @nonobjc public func detect(frame: opencv2.Mat, classIds: inout [Swift.Int32], confidences: inout [Swift.Float], boxes: inout [opencv2.Rect2i])
+}
+extension Layer {
+  @nonobjc public func finalize(inputs: [opencv2.Mat], outputs: inout [opencv2.Mat])
+}
+extension Layer {
+  @available(*, deprecated)
+  @nonobjc public func run(inputs: [opencv2.Mat], outputs: inout [opencv2.Mat], internals: inout [opencv2.Mat])
+}
+extension Model {
+  @nonobjc public func predict(frame: opencv2.Mat, outs: inout [opencv2.Mat])
+}
+extension Net {
+  @nonobjc public class func readFromModelOptimizer(bufferModelConfig: [Swift.UInt8], bufferWeights: [Swift.UInt8]) -> opencv2.Net
+}
+extension Net {
+  @nonobjc public func forward(outputBlobs: inout [opencv2.Mat], outputName: Swift.String)
+}
+extension Net {
+  @nonobjc public func forward(outputBlobs: inout [opencv2.Mat])
+}
+extension Net {
+  @nonobjc public func forward(outputBlobs: inout [opencv2.Mat], outBlobNames: [Swift.String])
+}
+extension Net {
+  @nonobjc public func forwardAndRetrieve(outputBlobs: inout [[opencv2.Mat]], outBlobNames: [Swift.String])
+}
+extension Net {
+  @nonobjc public func getLayersShapes(netInputShapes: [opencv2.IntVector], layersIds: inout [Swift.Int32], inLayersShapes: inout [[opencv2.IntVector]], outLayersShapes: inout [[opencv2.IntVector]])
+}
+extension Net {
+  @nonobjc public func getLayersShapes(netInputShape: opencv2.IntVector, layersIds: inout [Swift.Int32], inLayersShapes: inout [[opencv2.IntVector]], outLayersShapes: inout [[opencv2.IntVector]])
+}
+extension Net {
+  @nonobjc public func getLayerTypes(layersTypes: inout [Swift.String])
+}
+extension Net {
+  @nonobjc public func getPerfProfile(timings: inout [Swift.Double]) -> Swift.Int
+}
+extension TextDetectionModel {
+  @nonobjc public func detect(frame: opencv2.Mat, detections: inout [[opencv2.Point2i]], confidences: inout [Swift.Float])
+}
+extension TextDetectionModel {
+  @nonobjc public func detect(frame: opencv2.Mat, detections: inout [[opencv2.Point2i]])
+}
+extension TextDetectionModel {
+  @nonobjc public func detectTextRectangles(frame: opencv2.Mat, detections: inout [opencv2.RotatedRect], confidences: inout [Swift.Float])
+}
+extension TextDetectionModel {
+  @nonobjc public func detectTextRectangles(frame: opencv2.Mat, detections: inout [opencv2.RotatedRect])
+}
+extension TextRecognitionModel {
+  @nonobjc public func recognize(frame: opencv2.Mat, roiRects: [opencv2.Mat], results: inout [Swift.String])
+}
+extension Features2d {
+  @nonobjc public class func drawMatches(img1: opencv2.Mat, keypoints1: [opencv2.KeyPoint], img2: opencv2.Mat, keypoints2: [opencv2.KeyPoint], matches1to2: [opencv2.DMatch], outImg: opencv2.Mat, matchColor: opencv2.Scalar, singlePointColor: opencv2.Scalar, matchesMask: [Swift.Int8], flags: opencv2.DrawMatchesFlags)
+}
+extension Features2d {
+  @nonobjc public class func drawMatches(img1: opencv2.Mat, keypoints1: [opencv2.KeyPoint], img2: opencv2.Mat, keypoints2: [opencv2.KeyPoint], matches1to2: [opencv2.DMatch], outImg: opencv2.Mat, matchColor: opencv2.Scalar, singlePointColor: opencv2.Scalar, matchesMask: [Swift.Int8])
+}
+extension Features2d {
+  @nonobjc public class func drawMatches(img1: opencv2.Mat, keypoints1: [opencv2.KeyPoint], img2: opencv2.Mat, keypoints2: [opencv2.KeyPoint], matches1to2: [opencv2.DMatch], outImg: opencv2.Mat, matchesThickness: Swift.Int32, matchColor: opencv2.Scalar, singlePointColor: opencv2.Scalar, matchesMask: [Swift.Int8], flags: opencv2.DrawMatchesFlags)
+}
+extension Features2d {
+  @nonobjc public class func drawMatches(img1: opencv2.Mat, keypoints1: [opencv2.KeyPoint], img2: opencv2.Mat, keypoints2: [opencv2.KeyPoint], matches1to2: [opencv2.DMatch], outImg: opencv2.Mat, matchesThickness: Swift.Int32, matchColor: opencv2.Scalar, singlePointColor: opencv2.Scalar, matchesMask: [Swift.Int8])
+}
+extension Features2d {
+  @nonobjc public class func drawMatches(img1: opencv2.Mat, keypoints1: [opencv2.KeyPoint], img2: opencv2.Mat, keypoints2: [opencv2.KeyPoint], matches1to2: [[opencv2.DMatch]], outImg: opencv2.Mat, matchColor: opencv2.Scalar, singlePointColor: opencv2.Scalar, matchesMask: [[Swift.Int8]], flags: opencv2.DrawMatchesFlags)
+}
+extension Features2d {
+  @nonobjc public class func drawMatches(img1: opencv2.Mat, keypoints1: [opencv2.KeyPoint], img2: opencv2.Mat, keypoints2: [opencv2.KeyPoint], matches1to2: [[opencv2.DMatch]], outImg: opencv2.Mat, matchColor: opencv2.Scalar, singlePointColor: opencv2.Scalar, matchesMask: [[Swift.Int8]])
+}
+extension AffineFeature {
+  @nonobjc public func setViewParams(tilts: [Swift.Float], rolls: [Swift.Float])
+}
+extension AffineFeature {
+  @nonobjc public func getViewParams(tilts: [Swift.Float], rolls: [Swift.Float])
+}
+extension BRISK {
+  @nonobjc public class func create(radiusList: [Swift.Float], numberList: [Swift.Int32], dMax: Swift.Float, dMin: Swift.Float, indexChange: [Swift.Int32]) -> opencv2.BRISK
+}
+extension BRISK {
+  @nonobjc public class func create(radiusList: [Swift.Float], numberList: [Swift.Int32], dMax: Swift.Float, dMin: Swift.Float) -> opencv2.BRISK
+}
+extension BRISK {
+  @nonobjc public class func create(radiusList: [Swift.Float], numberList: [Swift.Int32], dMax: Swift.Float) -> opencv2.BRISK
+}
+extension BRISK {
+  @nonobjc public class func create(radiusList: [Swift.Float], numberList: [Swift.Int32]) -> opencv2.BRISK
+}
+extension BRISK {
+  @nonobjc public class func create(thresh: Swift.Int32, octaves: Swift.Int32, radiusList: [Swift.Float], numberList: [Swift.Int32], dMax: Swift.Float, dMin: Swift.Float, indexChange: [Swift.Int32]) -> opencv2.BRISK
+}
+extension BRISK {
+  @nonobjc public class func create(thresh: Swift.Int32, octaves: Swift.Int32, radiusList: [Swift.Float], numberList: [Swift.Int32], dMax: Swift.Float, dMin: Swift.Float) -> opencv2.BRISK
+}
+extension BRISK {
+  @nonobjc public class func create(thresh: Swift.Int32, octaves: Swift.Int32, radiusList: [Swift.Float], numberList: [Swift.Int32], dMax: Swift.Float) -> opencv2.BRISK
+}
+extension BRISK {
+  @nonobjc public class func create(thresh: Swift.Int32, octaves: Swift.Int32, radiusList: [Swift.Float], numberList: [Swift.Int32]) -> opencv2.BRISK
+}
+extension DescriptorMatcher {
+  @nonobjc public func match(queryDescriptors: opencv2.Mat, trainDescriptors: opencv2.Mat, matches: inout [opencv2.DMatch], mask: opencv2.Mat)
+}
+extension DescriptorMatcher {
+  @nonobjc public func match(queryDescriptors: opencv2.Mat, trainDescriptors: opencv2.Mat, matches: inout [opencv2.DMatch])
+}
+extension DescriptorMatcher {
+  @nonobjc public func knnMatch(queryDescriptors: opencv2.Mat, trainDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], k: Swift.Int32, mask: opencv2.Mat, compactResult: Swift.Bool)
+}
+extension DescriptorMatcher {
+  @nonobjc public func knnMatch(queryDescriptors: opencv2.Mat, trainDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], k: Swift.Int32, mask: opencv2.Mat)
+}
+extension DescriptorMatcher {
+  @nonobjc public func knnMatch(queryDescriptors: opencv2.Mat, trainDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], k: Swift.Int32)
+}
+extension DescriptorMatcher {
+  @nonobjc public func radiusMatch(queryDescriptors: opencv2.Mat, trainDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], maxDistance: Swift.Float, mask: opencv2.Mat, compactResult: Swift.Bool)
+}
+extension DescriptorMatcher {
+  @nonobjc public func radiusMatch(queryDescriptors: opencv2.Mat, trainDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], maxDistance: Swift.Float, mask: opencv2.Mat)
+}
+extension DescriptorMatcher {
+  @nonobjc public func radiusMatch(queryDescriptors: opencv2.Mat, trainDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], maxDistance: Swift.Float)
+}
+extension DescriptorMatcher {
+  @nonobjc public func match(queryDescriptors: opencv2.Mat, matches: inout [opencv2.DMatch], masks: [opencv2.Mat])
+}
+extension DescriptorMatcher {
+  @nonobjc public func match(queryDescriptors: opencv2.Mat, matches: inout [opencv2.DMatch])
+}
+extension DescriptorMatcher {
+  @nonobjc public func knnMatch(queryDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], k: Swift.Int32, masks: [opencv2.Mat], compactResult: Swift.Bool)
+}
+extension DescriptorMatcher {
+  @nonobjc public func knnMatch(queryDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], k: Swift.Int32, masks: [opencv2.Mat])
+}
+extension DescriptorMatcher {
+  @nonobjc public func knnMatch(queryDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], k: Swift.Int32)
+}
+extension DescriptorMatcher {
+  @nonobjc public func radiusMatch(queryDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], maxDistance: Swift.Float, masks: [opencv2.Mat], compactResult: Swift.Bool)
+}
+extension DescriptorMatcher {
+  @nonobjc public func radiusMatch(queryDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], maxDistance: Swift.Float, masks: [opencv2.Mat])
+}
+extension DescriptorMatcher {
+  @nonobjc public func radiusMatch(queryDescriptors: opencv2.Mat, matches: inout [[opencv2.DMatch]], maxDistance: Swift.Float)
+}
+extension Feature2D {
+  @nonobjc public func detect(image: opencv2.Mat, keypoints: inout [opencv2.KeyPoint], mask: opencv2.Mat)
+}
+extension Feature2D {
+  @nonobjc public func detect(image: opencv2.Mat, keypoints: inout [opencv2.KeyPoint])
+}
+extension Feature2D {
+  @nonobjc public func detect(images: [opencv2.Mat], keypoints: inout [[opencv2.KeyPoint]], masks: [opencv2.Mat])
+}
+extension Feature2D {
+  @nonobjc public func detect(images: [opencv2.Mat], keypoints: inout [[opencv2.KeyPoint]])
+}
+extension Feature2D {
+  @nonobjc public func compute(image: opencv2.Mat, keypoints: inout [opencv2.KeyPoint], descriptors: opencv2.Mat)
+}
+extension Feature2D {
+  @nonobjc public func compute(images: [opencv2.Mat], keypoints: inout [[opencv2.KeyPoint]], descriptors: inout [opencv2.Mat])
+}
+extension Feature2D {
+  @nonobjc public func detectAndCompute(image: opencv2.Mat, mask: opencv2.Mat, keypoints: inout [opencv2.KeyPoint], descriptors: opencv2.Mat, useProvidedKeypoints: Swift.Bool)
+}
+extension Feature2D {
+  @nonobjc public func detectAndCompute(image: opencv2.Mat, mask: opencv2.Mat, keypoints: inout [opencv2.KeyPoint], descriptors: opencv2.Mat)
+}
+extension MSER {
+  @nonobjc public func detectRegions(image: opencv2.Mat, msers: inout [[opencv2.Point2i]], bboxes: inout [opencv2.Rect2i])
+}
+extension Imgcodecs {
+  @nonobjc public class func imreadmulti(filename: Swift.String, mats: inout [opencv2.Mat], flags: Swift.Int32) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imreadmulti(filename: Swift.String, mats: inout [opencv2.Mat]) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imreadmulti(filename: Swift.String, mats: inout [opencv2.Mat], start: Swift.Int32, count: Swift.Int32, flags: Swift.Int32) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imreadmulti(filename: Swift.String, mats: inout [opencv2.Mat], start: Swift.Int32, count: Swift.Int32) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imwrite(filename: Swift.String, img: opencv2.Mat, params: [Swift.Int32]) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imwritemulti(filename: Swift.String, img: [opencv2.Mat], params: [Swift.Int32]) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imencode(ext: Swift.String, img: opencv2.Mat, buf: inout [Swift.UInt8], params: [Swift.Int32]) -> Swift.Bool
+}
+extension Imgcodecs {
+  @nonobjc public class func imencode(ext: Swift.String, img: opencv2.Mat, buf: inout [Swift.UInt8]) -> Swift.Bool
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: opencv2.Mat, corners: inout [opencv2.Point2i], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: opencv2.Mat, blockSize: Swift.Int32, useHarrisDetector: Swift.Bool, k: Swift.Double)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: opencv2.Mat, corners: inout [opencv2.Point2i], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: opencv2.Mat, blockSize: Swift.Int32, useHarrisDetector: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: opencv2.Mat, corners: inout [opencv2.Point2i], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: opencv2.Mat, blockSize: Swift.Int32)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: opencv2.Mat, corners: inout [opencv2.Point2i], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: opencv2.Mat)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: opencv2.Mat, corners: inout [opencv2.Point2i], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: opencv2.Mat, corners: inout [opencv2.Point2i], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: opencv2.Mat, blockSize: Swift.Int32, gradientSize: Swift.Int32, useHarrisDetector: Swift.Bool, k: Swift.Double)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: opencv2.Mat, corners: inout [opencv2.Point2i], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: opencv2.Mat, blockSize: Swift.Int32, gradientSize: Swift.Int32, useHarrisDetector: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func goodFeaturesToTrack(image: opencv2.Mat, corners: inout [opencv2.Point2i], maxCorners: Swift.Int32, qualityLevel: Swift.Double, minDistance: Swift.Double, mask: opencv2.Mat, blockSize: Swift.Int32, gradientSize: Swift.Int32)
+}
+extension Imgproc {
+  @nonobjc public class func calcHist(images: [opencv2.Mat], channels: [Swift.Int32], mask: opencv2.Mat, hist: opencv2.Mat, histSize: [Swift.Int32], ranges: [Swift.Float], accumulate: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func calcHist(images: [opencv2.Mat], channels: [Swift.Int32], mask: opencv2.Mat, hist: opencv2.Mat, histSize: [Swift.Int32], ranges: [Swift.Float])
+}
+extension Imgproc {
+  @nonobjc public class func calcBackProject(images: [opencv2.Mat], channels: [Swift.Int32], hist: opencv2.Mat, dst: opencv2.Mat, ranges: [Swift.Float], scale: Swift.Double)
+}
+extension Imgproc {
+  @nonobjc public class func findContours(image: opencv2.Mat, contours: inout [[opencv2.Point2i]], hierarchy: opencv2.Mat, mode: opencv2.RetrievalModes, method: opencv2.ContourApproximationModes, offset: opencv2.Point2i)
+}
+extension Imgproc {
+  @nonobjc public class func findContours(image: opencv2.Mat, contours: inout [[opencv2.Point2i]], hierarchy: opencv2.Mat, mode: opencv2.RetrievalModes, method: opencv2.ContourApproximationModes)
+}
+extension Imgproc {
+  @nonobjc public class func approxPolyDP(curve: [opencv2.Point2f], approxCurve: inout [opencv2.Point2f], epsilon: Swift.Double, closed: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func convexHull(points: [opencv2.Point2i], hull: inout [Swift.Int32], clockwise: Swift.Bool)
+}
+extension Imgproc {
+  @nonobjc public class func convexHull(points: [opencv2.Point2i], hull: inout [Swift.Int32])
+}
+extension Imgproc {
+  @nonobjc public class func convexityDefects(contour: [opencv2.Point2i], convexhull: [Swift.Int32], convexityDefects: inout [opencv2.Int4])
+}
+extension Imgproc {
+  @nonobjc public class func ellipse2Poly(center: opencv2.Point2i, axes: opencv2.Size2i, angle: Swift.Int32, arcStart: Swift.Int32, arcEnd: Swift.Int32, delta: Swift.Int32, pts: inout [opencv2.Point2i])
+}
+extension Subdiv2D {
+  @nonobjc public func getEdgeList(edgeList: inout [opencv2.Float4])
+}
+extension Subdiv2D {
+  @nonobjc public func getLeadingEdgeList(leadingEdgeList: inout [Swift.Int32])
+}
+extension Subdiv2D {
+  @nonobjc public func getTriangleList(triangleList: inout [opencv2.Float6])
+}
+extension Subdiv2D {
+  @nonobjc public func getVoronoiFacetList(idx: [Swift.Int32], facetList: inout [[opencv2.Point2f]], facetCenters: inout [opencv2.Point2f])
+}
+extension EM {
+  @nonobjc public func getCovs(covs: inout [opencv2.Mat])
+}
+extension Objdetect {
+  @nonobjc public class func groupRectangles(rectList: inout [opencv2.Rect2i], weights: inout [Swift.Int32], groupThreshold: Swift.Int32, eps: Swift.Double)
+}
+extension Objdetect {
+  @nonobjc public class func groupRectangles(rectList: inout [opencv2.Rect2i], weights: inout [Swift.Int32], groupThreshold: Swift.Int32)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32, minSize: opencv2.Size2i, maxSize: opencv2.Size2i)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32, minSize: opencv2.Size2i)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], scaleFactor: Swift.Double, minNeighbors: Swift.Int32)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], scaleFactor: Swift.Double)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i])
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], numDetections: inout [Swift.Int32], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32, minSize: opencv2.Size2i, maxSize: opencv2.Size2i)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], numDetections: inout [Swift.Int32], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32, minSize: opencv2.Size2i)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], numDetections: inout [Swift.Int32], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], numDetections: inout [Swift.Int32], scaleFactor: Swift.Double, minNeighbors: Swift.Int32)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], numDetections: inout [Swift.Int32], scaleFactor: Swift.Double)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], numDetections: inout [Swift.Int32])
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], rejectLevels: inout [Swift.Int32], levelWeights: inout [Swift.Double], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32, minSize: opencv2.Size2i, maxSize: opencv2.Size2i, outputRejectLevels: Swift.Bool)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], rejectLevels: inout [Swift.Int32], levelWeights: inout [Swift.Double], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32, minSize: opencv2.Size2i, maxSize: opencv2.Size2i)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], rejectLevels: inout [Swift.Int32], levelWeights: inout [Swift.Double], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32, minSize: opencv2.Size2i)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], rejectLevels: inout [Swift.Int32], levelWeights: inout [Swift.Double], scaleFactor: Swift.Double, minNeighbors: Swift.Int32, flags: Swift.Int32)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], rejectLevels: inout [Swift.Int32], levelWeights: inout [Swift.Double], scaleFactor: Swift.Double, minNeighbors: Swift.Int32)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], rejectLevels: inout [Swift.Int32], levelWeights: inout [Swift.Double], scaleFactor: Swift.Double)
+}
+extension CascadeClassifier {
+  @nonobjc public func detectMultiScale(image: opencv2.Mat, objects: inout [opencv2.Rect2i], rejectLevels: inout [Swift.Int32], levelWeights: inout [Swift.Double])
+}
+extension HOGDescriptor {
+  @nonobjc public func compute(img: opencv2.Mat, descriptors: inout [Swift.Float], winStride: opencv2.Size2i, padding: opencv2.Size2i, locations: [opencv2.Point2i])
+}
+extension HOGDescriptor {
+  @nonobjc public func compute(img: opencv2.Mat, descriptors: inout [Swift.Float], winStride: opencv2.Size2i, padding: opencv2.Size2i)
+}
+extension HOGDescriptor {
+  @nonobjc public func compute(img: opencv2.Mat, descriptors: inout [Swift.Float], winStride: opencv2.Size2i)
+}
+extension HOGDescriptor {
+  @nonobjc public func compute(img: opencv2.Mat, descriptors: inout [Swift.Float])
+}
+extension HOGDescriptor {
+  @nonobjc public func detect(img: opencv2.Mat, foundLocations: inout [opencv2.Point2i], weights: inout [Swift.Double], hitThreshold: Swift.Double, winStride: opencv2.Size2i, padding: opencv2.Size2i, searchLocations: [opencv2.Point2i])
+}
+extension HOGDescriptor {
+  @nonobjc public func detect(img: opencv2.Mat, foundLocations: inout [opencv2.Point2i], weights: inout [Swift.Double], hitThreshold: Swift.Double, winStride: opencv2.Size2i, padding: opencv2.Size2i)
+}
+extension HOGDescriptor {
+  @nonobjc public func detect(img: opencv2.Mat, foundLocations: inout [opencv2.Point2i], weights: inout [Swift.Double], hitThreshold: Swift.Double, winStride: opencv2.Size2i)
+}
+extension HOGDescriptor {
+  @nonobjc public func detect(img: opencv2.Mat, foundLocations: inout [opencv2.Point2i], weights: inout [Swift.Double], hitThreshold: Swift.Double)
+}
+extension HOGDescriptor {
+  @nonobjc public func detect(img: opencv2.Mat, foundLocations: inout [opencv2.Point2i], weights: inout [Swift.Double])
+}
+extension HOGDescriptor {
+  @nonobjc public func detectMultiScale(img: opencv2.Mat, foundLocations: inout [opencv2.Rect2i], foundWeights: inout [Swift.Double], hitThreshold: Swift.Double, winStride: opencv2.Size2i, padding: opencv2.Size2i, scale: Swift.Double, finalThreshold: Swift.Double, useMeanshiftGrouping: Swift.Bool)
+}
+extension HOGDescriptor {
+  @nonobjc public func detectMultiScale(img: opencv2.Mat, foundLocations: inout [opencv2.Rect2i], foundWeights: inout [Swift.Double], hitThreshold: Swift.Double, winStride: opencv2.Size2i, padding: opencv2.Size2i, scale: Swift.Double, finalThreshold: Swift.Double)
+}
+extension HOGDescriptor {
+  @nonobjc public func detectMultiScale(img: opencv2.Mat, foundLocations: inout [opencv2.Rect2i], foundWeights: inout [Swift.Double], hitThreshold: Swift.Double, winStride: opencv2.Size2i, padding: opencv2.Size2i, scale: Swift.Double)
+}
+extension HOGDescriptor {
+  @nonobjc public func detectMultiScale(img: opencv2.Mat, foundLocations: inout [opencv2.Rect2i], foundWeights: inout [Swift.Double], hitThreshold: Swift.Double, winStride: opencv2.Size2i, padding: opencv2.Size2i)
+}
+extension HOGDescriptor {
+  @nonobjc public func detectMultiScale(img: opencv2.Mat, foundLocations: inout [opencv2.Rect2i], foundWeights: inout [Swift.Double], hitThreshold: Swift.Double, winStride: opencv2.Size2i)
+}
+extension HOGDescriptor {
+  @nonobjc public func detectMultiScale(img: opencv2.Mat, foundLocations: inout [opencv2.Rect2i], foundWeights: inout [Swift.Double], hitThreshold: Swift.Double)
+}
+extension HOGDescriptor {
+  @nonobjc public func detectMultiScale(img: opencv2.Mat, foundLocations: inout [opencv2.Rect2i], foundWeights: inout [Swift.Double])
+}
+extension QRCodeDetector {
+  @nonobjc public func decodeMulti(img: opencv2.Mat, points: opencv2.Mat, decoded_info: inout [Swift.String], straight_qrcode: inout [opencv2.Mat]) -> Swift.Bool
+}
+extension QRCodeDetector {
+  @nonobjc public func decodeMulti(img: opencv2.Mat, points: opencv2.Mat, decoded_info: inout [Swift.String]) -> Swift.Bool
+}
+extension QRCodeDetector {
+  @nonobjc public func detectAndDecodeMulti(img: opencv2.Mat, decoded_info: inout [Swift.String], points: opencv2.Mat, straight_qrcode: inout [opencv2.Mat]) -> Swift.Bool
+}
+extension QRCodeDetector {
+  @nonobjc public func detectAndDecodeMulti(img: opencv2.Mat, decoded_info: inout [Swift.String], points: opencv2.Mat) -> Swift.Bool
+}
+extension QRCodeDetector {
+  @nonobjc public func detectAndDecodeMulti(img: opencv2.Mat, decoded_info: inout [Swift.String]) -> Swift.Bool
+}
+extension Photo {
+  @nonobjc public class func fastNlMeansDenoising(src: opencv2.Mat, dst: opencv2.Mat, hVector: [Swift.Float], templateWindowSize: Swift.Int32, searchWindowSize: Swift.Int32, normType: Swift.Int32)
+}
+extension Photo {
+  @nonobjc public class func fastNlMeansDenoising(src: opencv2.Mat, dst: opencv2.Mat, hVector: [Swift.Float], templateWindowSize: Swift.Int32, searchWindowSize: Swift.Int32)
+}
+extension Photo {
+  @nonobjc public class func fastNlMeansDenoising(src: opencv2.Mat, dst: opencv2.Mat, hVector: [Swift.Float], templateWindowSize: Swift.Int32)
+}
+extension Photo {
+  @nonobjc public class func fastNlMeansDenoising(src: opencv2.Mat, dst: opencv2.Mat, hVector: [Swift.Float])
+}
+extension Photo {
+  @nonobjc public class func fastNlMeansDenoisingMulti(srcImgs: [opencv2.Mat], dst: opencv2.Mat, imgToDenoiseIndex: Swift.Int32, temporalWindowSize: Swift.Int32, hVector: [Swift.Float], templateWindowSize: Swift.Int32, searchWindowSize: Swift.Int32, normType: Swift.Int32)
+}
+extension Photo {
+  @nonobjc public class func fastNlMeansDenoisingMulti(srcImgs: [opencv2.Mat], dst: opencv2.Mat, imgToDenoiseIndex: Swift.Int32, temporalWindowSize: Swift.Int32, hVector: [Swift.Float], templateWindowSize: Swift.Int32, searchWindowSize: Swift.Int32)
+}
+extension Photo {
+  @nonobjc public class func fastNlMeansDenoisingMulti(srcImgs: [opencv2.Mat], dst: opencv2.Mat, imgToDenoiseIndex: Swift.Int32, temporalWindowSize: Swift.Int32, hVector: [Swift.Float], templateWindowSize: Swift.Int32)
+}
+extension Photo {
+  @nonobjc public class func fastNlMeansDenoisingMulti(srcImgs: [opencv2.Mat], dst: opencv2.Mat, imgToDenoiseIndex: Swift.Int32, temporalWindowSize: Swift.Int32, hVector: [Swift.Float])
+}
+extension Video {
+  @nonobjc public class func buildOpticalFlowPyramid(img: opencv2.Mat, pyramid: inout [opencv2.Mat], winSize: opencv2.Size2i, maxLevel: Swift.Int32, withDerivatives: Swift.Bool, pyrBorder: Swift.Int32, derivBorder: Swift.Int32, tryReuseInputImage: Swift.Bool) -> Swift.Int32
+}
+extension Video {
+  @nonobjc public class func buildOpticalFlowPyramid(img: opencv2.Mat, pyramid: inout [opencv2.Mat], winSize: opencv2.Size2i, maxLevel: Swift.Int32, withDerivatives: Swift.Bool, pyrBorder: Swift.Int32, derivBorder: Swift.Int32) -> Swift.Int32
+}
+extension Video {
+  @nonobjc public class func buildOpticalFlowPyramid(img: opencv2.Mat, pyramid: inout [opencv2.Mat], winSize: opencv2.Size2i, maxLevel: Swift.Int32, withDerivatives: Swift.Bool, pyrBorder: Swift.Int32) -> Swift.Int32
+}
+extension Video {
+  @nonobjc public class func buildOpticalFlowPyramid(img: opencv2.Mat, pyramid: inout [opencv2.Mat], winSize: opencv2.Size2i, maxLevel: Swift.Int32, withDerivatives: Swift.Bool) -> Swift.Int32
+}
+extension Video {
+  @nonobjc public class func buildOpticalFlowPyramid(img: opencv2.Mat, pyramid: inout [opencv2.Mat], winSize: opencv2.Size2i, maxLevel: Swift.Int32) -> Swift.Int32
+}
+extension VideoCapture {
+  @nonobjc public convenience init(filename: Swift.String, apiPreference: Swift.Int32, params: [Swift.Int32])
+}
+extension VideoCapture {
+  @nonobjc public convenience init(index: Swift.Int32, apiPreference: Swift.Int32, params: [Swift.Int32])
+}
+extension VideoCapture {
+  @nonobjc public func open(filename: Swift.String, apiPreference: Swift.Int32, params: [Swift.Int32]) -> Swift.Bool
+}
+extension VideoCapture {
+  @nonobjc public func open(index: Swift.Int32, apiPreference: Swift.Int32, params: [Swift.Int32]) -> Swift.Bool
+}
+extension VideoWriter {
+  @nonobjc public convenience init(filename: Swift.String, fourcc: Swift.Int32, fps: Swift.Double, frameSize: opencv2.Size2i, params: [Swift.Int32])
+}
+extension VideoWriter {
+  @nonobjc public convenience init(filename: Swift.String, apiPreference: Swift.Int32, fourcc: Swift.Int32, fps: Swift.Double, frameSize: opencv2.Size2i, params: [Swift.Int32])
+}
+extension VideoWriter {
+  @nonobjc public func open(filename: Swift.String, fourcc: Swift.Int32, fps: Swift.Double, frameSize: opencv2.Size2i, params: [Swift.Int32]) -> Swift.Bool
+}
+extension VideoWriter {
+  @nonobjc public func open(filename: Swift.String, apiPreference: Swift.Int32, fourcc: Swift.Int32, fps: Swift.Double, frameSize: opencv2.Size2i, params: [Swift.Int32]) -> Swift.Bool
+}

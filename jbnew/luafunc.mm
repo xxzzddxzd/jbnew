@@ -10,7 +10,7 @@
 #import <mach-o/dyld.h>
 #import <dlfcn.h>
 #import <mach/mach_time.h>
-
+#import <objc/runtime.h>
 
 #import "luafunc.h"
 #import "imageMatch.h"
@@ -20,10 +20,10 @@
 #import "IOHIDEvent.h"
 #import "IOHIDEventTypes.h"
 #import "IOHIDService.h"
-#define x5Logt(FORMAT, ...) x5LogPrint(X5_LOG_TYPE_LUAMANAGER , [NSString stringWithFormat:FORMAT, ##__VA_ARGS__]);
 
+#define x5Logt(FORMAT, ...) x5LogPrint(X5_LOG_TYPE_LUAMANAGER , [NSString stringWithFormat:FORMAT, ##__VA_ARGS__]);
 #define Int2String(i) [NSString stringWithFormat:@"%d", i]
-#define enableF 1
+
 @interface BKUserEventTimer
 + (id)sharedInstance;
 - (void)userEventOccurred; //iOS6
@@ -250,7 +250,7 @@ static int lLaunchAppByBundleID(lua_State *L)
             x5Logt(@"启动app使用ID %s", para1);
             void* sbServices = dlopen("/System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices", RTLD_LAZY);
             launchByBID = (int (*)(CFStringRef,Boolean))dlsym(sbServices, "SBSLaunchApplicationWithIdentifier");
-            x5Logt(@"获取SBSLaunchApplicationWithIdentifier入口 0x%x", launchByBID);
+//            x5Logt(@"获取SBSLaunchApplicationWithIdentifier入口 0x%x", launchByBID);
             if (launchByBID){
                 result = launchByBID(__CFStringMakeConstantString(para1), false);
                 x5Logt(@"result %d", result);
@@ -311,6 +311,7 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
 + (instancetype)managerCenter {
     if (!center){
         center = [[luaManager alloc] init];
+        center.senderID = 0;
     }
     return center;
 }
@@ -376,9 +377,14 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
     lua_sethook(self.L, &LineHookFunc, LUA_MASKLINE, 0);
     [self luaClean];
     
-    // 开始运行
+//    开始运行
     self.isLuaRunning=TRUE;
+//    开始截图
     [[imageMatch managerCenter] startLoopForScreenShot];
+//    调低亮度
+//    [UIScreen mainScreen].brightness = 0;
+//    id controller = [SBBrightnessController sharedBrightnessController];
+    [[objc_getClass("SBDisplayBrightnessController") alloc] setBrightnessLevel:0];
     int s = luaL_dofile(self.L,[self.luaPath UTF8String]);//只是对代码进行载入并不执行
     if ( s!=0 )
     {

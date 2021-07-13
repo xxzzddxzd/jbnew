@@ -18,8 +18,6 @@ OBJC_EXTERN UIImage *_UICreateScreenUIImage() NS_RETURNS_RETAINED;
 
 @implementation imageMatch
 static imageMatch *center = nil;
-bool isImgWritting;
-UIImage * screenImage;
 
 -(UIImage *)UIImgCut:(UIImage *)inImg rect:(CGRect)rect{
     CGImageRef subImageRef = CGImageCreateWithImageInRect(inImg.CGImage, rect);
@@ -130,9 +128,10 @@ UIImage * screenImage;
     result.deallocate();
         x5Logt(@"match_method%d tempMat1 = %p, tempMat2 = %p, result = %p", match_method,&tempMat1, &tempMat2, &result);
     
-
+    x5Logt(@"minf %f",*minf)
     switch (match_method) {
         case 1:
+            
             if (*minf < 0.01) {
                 return YES;
             }
