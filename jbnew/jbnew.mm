@@ -77,8 +77,8 @@ void setListen(){
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class SBDisplayBrightnessController; @class SpringBoard; 
-static void (*_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$)(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); static void (*_logos_orig$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$)(_LOGOS_SELF_TYPE_NORMAL SBDisplayBrightnessController* _LOGOS_SELF_CONST, SEL, float); static void _logos_method$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$(_LOGOS_SELF_TYPE_NORMAL SBDisplayBrightnessController* _LOGOS_SELF_CONST, SEL, float); 
+@class SpringBoard; 
+static void (*_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$)(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); 
 
 #line 58 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
 
@@ -90,11 +90,11 @@ static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(
 
 
 
-static void _logos_method$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$(_LOGOS_SELF_TYPE_NORMAL SBDisplayBrightnessController* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, float arg1) {
-    XLog(@"setBrightnessLevel %f",arg1)
-    _logos_orig$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$(self, _cmd, arg1);
-}
+
+
+
+
 
 static __attribute__((constructor)) void _logosLocalInit() {
-{Class _logos_class$_ungrouped$SpringBoard = objc_getClass("SpringBoard"); { MSHookMessageEx(_logos_class$_ungrouped$SpringBoard, @selector(applicationDidFinishLaunching:), (IMP)&_logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$, (IMP*)&_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$);}Class _logos_class$_ungrouped$SBDisplayBrightnessController = objc_getClass("SBDisplayBrightnessController"); { MSHookMessageEx(_logos_class$_ungrouped$SBDisplayBrightnessController, @selector(setBrightnessLevel:), (IMP)&_logos_method$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$, (IMP*)&_logos_orig$_ungrouped$SBDisplayBrightnessController$setBrightnessLevel$);}} }
+{Class _logos_class$_ungrouped$SpringBoard = objc_getClass("SpringBoard"); { MSHookMessageEx(_logos_class$_ungrouped$SpringBoard, @selector(applicationDidFinishLaunching:), (IMP)&_logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$, (IMP*)&_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$);}} }
 #line 72 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"

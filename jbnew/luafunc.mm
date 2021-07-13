@@ -186,6 +186,12 @@ static int lCaptureScreen(lua_State * L)
     return 0;
 }
 
+static int lSetBrightness(lua_State * L)
+{
+    [[luaManager managerCenter] setBrightness];
+    return 0;
+}
+
 NSString * nextImgToSavesFileName = nil;
 static int lCaptureScreenAndSaveToFile(lua_State * L)
 {
@@ -352,7 +358,7 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
     lua_register(self.L, "lLogParaSet", lLogParaLoad);
     lua_register(self.L, "isLuaRunning",lIsLuaRunning);
     lua_register(self.L, "launchByID",lLaunchAppByBundleID);
-//    lua_register(self.L, "fileRenameAndDelete",lFileSave);
+    lua_register(self.L, "setBrightness",lSetBrightness);
 //    lua_register(self.L, "getFileList",lGetFileList);
 //    lua_register(self.L, "getFileListPath",lGetFileListPath);
 //    lua_register(self.L, "writeLineToFile",lWriteLineToFile);
@@ -364,6 +370,11 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
     self.isLuaRunning = FALSE;
     self.sign_luaQuit = FALSE;
     self.isAutoSnapShot = FALSE;
+}
+
+-(void)setBrightness{
+//    x5Logt(@"setBrightness")
+    [[objc_getClass("SBDisplayBrightnessController") alloc] setBrightnessLevel:0];
 }
 
 -(void)loadLuaWithName:(NSString *)luaPath imgDicPath:(NSString*)imgDicPath{
@@ -382,9 +393,7 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
 //    开始截图
     [[imageMatch managerCenter] startLoopForScreenShot];
 //    调低亮度
-//    [UIScreen mainScreen].brightness = 0;
-//    id controller = [SBBrightnessController sharedBrightnessController];
-    [[objc_getClass("SBDisplayBrightnessController") alloc] setBrightnessLevel:0];
+    [self setBrightness];
     int s = luaL_dofile(self.L,[self.luaPath UTF8String]);//只是对代码进行载入并不执行
     if ( s!=0 )
     {

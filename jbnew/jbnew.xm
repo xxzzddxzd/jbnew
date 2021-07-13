@@ -63,9 +63,9 @@ void setListen(){
 }
 %end
 
-%hook SBDisplayBrightnessController
--(void)setBrightnessLevel:(float)arg1 {
-    XLog(@"setBrightnessLevel %f",arg1)
-    %orig;
-}
-%end
+//%hook SBDisplayBrightnessController
+//-(void)setBrightnessLevel:(float)arg1 {
+//    XLog(@"setBrightnessLevel %f",arg1)
+//    %orig;
+//}
+//%end
