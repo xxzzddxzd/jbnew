@@ -21,6 +21,16 @@
 		B1373C812696DB7C00EDB1F4 /* CydiaSubstrate.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B1373C802696DB7C00EDB1F4 /* CydiaSubstrate.tbd */; };
 		B1373C892696F72700EDB1F4 /* NSObject+IOFamilyDlsym.h in Headers */ = {isa = PBXBuildFile; fileRef = B1373C872696F72700EDB1F4 /* NSObject+IOFamilyDlsym.h */; };
 		B1373C8A2696F72700EDB1F4 /* NSObject+IOFamilyDlsym.m in Sources */ = {isa = PBXBuildFile; fileRef = B1373C882696F72700EDB1F4 /* NSObject+IOFamilyDlsym.m */; };
+		B14C9A45289BDCF200DC59F5 /* x5fPmvc.m in Sources */ = {isa = PBXBuildFile; fileRef = B14C9A3B289BDCF200DC59F5 /* x5fPmvc.m */; };
+		B14C9A46289BDCF200DC59F5 /* x5fPdb.h in Headers */ = {isa = PBXBuildFile; fileRef = B14C9A3C289BDCF200DC59F5 /* x5fPdb.h */; };
+		B14C9A47289BDCF200DC59F5 /* HBView.m in Sources */ = {isa = PBXBuildFile; fileRef = B14C9A3D289BDCF200DC59F5 /* HBView.m */; };
+		B14C9A48289BDCF200DC59F5 /* HBWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B14C9A3E289BDCF200DC59F5 /* HBWindow.m */; };
+		B14C9A49289BDCF200DC59F5 /* x5fPmc.mm in Sources */ = {isa = PBXBuildFile; fileRef = B14C9A3F289BDCF200DC59F5 /* x5fPmc.mm */; };
+		B14C9A4A289BDCF200DC59F5 /* x5fPmc.h in Headers */ = {isa = PBXBuildFile; fileRef = B14C9A40289BDCF200DC59F5 /* x5fPmc.h */; };
+		B14C9A4B289BDCF200DC59F5 /* x5fPdb.m in Sources */ = {isa = PBXBuildFile; fileRef = B14C9A41289BDCF200DC59F5 /* x5fPdb.m */; };
+		B14C9A4C289BDCF200DC59F5 /* x5fPmvc.h in Headers */ = {isa = PBXBuildFile; fileRef = B14C9A42289BDCF200DC59F5 /* x5fPmvc.h */; };
+		B14C9A4D289BDCF200DC59F5 /* HBView.h in Headers */ = {isa = PBXBuildFile; fileRef = B14C9A43289BDCF200DC59F5 /* HBView.h */; };
+		B14C9A4E289BDCF200DC59F5 /* HBWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = B14C9A44289BDCF200DC59F5 /* HBWindow.h */; };
 		B1EA8C3B26958FE20013A362 /* logCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = B1EA8C3926958FE10013A362 /* logCenter.h */; };
 		B1EA8C3C26958FE20013A362 /* logCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B1EA8C3A26958FE10013A362 /* logCenter.mm */; };
 		B1EA8C432695962C0013A362 /* imageMatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = B1EA8C412695962C0013A362 /* imageMatch.mm */; };
@@ -65,6 +75,16 @@
 		B1373C802696DB7C00EDB1F4 /* CydiaSubstrate.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = CydiaSubstrate.tbd; path = ../../../../../opt/theos/vendor/lib/CydiaSubstrate.framework/CydiaSubstrate.tbd; sourceTree = "<group>"; };
 		B1373C872696F72700EDB1F4 /* NSObject+IOFamilyDlsym.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+IOFamilyDlsym.h"; sourceTree = "<group>"; };
 		B1373C882696F72700EDB1F4 /* NSObject+IOFamilyDlsym.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IOFamilyDlsym.m"; sourceTree = "<group>"; };
+		B14C9A3B289BDCF200DC59F5 /* x5fPmvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = x5fPmvc.m; sourceTree = "<group>"; };
+		B14C9A3C289BDCF200DC59F5 /* x5fPdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x5fPdb.h; sourceTree = "<group>"; };
+		B14C9A3D289BDCF200DC59F5 /* HBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBView.m; sourceTree = "<group>"; };
+		B14C9A3E289BDCF200DC59F5 /* HBWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBWindow.m; sourceTree = "<group>"; };
+		B14C9A3F289BDCF200DC59F5 /* x5fPmc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = x5fPmc.mm; sourceTree = "<group>"; };
+		B14C9A40289BDCF200DC59F5 /* x5fPmc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x5fPmc.h; sourceTree = "<group>"; };
+		B14C9A41289BDCF200DC59F5 /* x5fPdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = x5fPdb.m; sourceTree = "<group>"; };
+		B14C9A42289BDCF200DC59F5 /* x5fPmvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x5fPmvc.h; sourceTree = "<group>"; };
+		B14C9A43289BDCF200DC59F5 /* HBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBView.h; sourceTree = "<group>"; };
+		B14C9A44289BDCF200DC59F5 /* HBWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBWindow.h; sourceTree = "<group>"; };
 		B1EA8C3926958FE10013A362 /* logCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logCenter.h; sourceTree = "<group>"; };
 		B1EA8C3A26958FE10013A362 /* logCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = logCenter.mm; sourceTree = "<group>"; };
 		B1EA8C412695962C0013A362 /* imageMatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = imageMatch.mm; sourceTree = "<group>"; };
@@ -118,6 +138,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B14C9A3A289BDCF200DC59F5 /* ball */ = {
+			isa = PBXGroup;
+			children = (
+				B14C9A3B289BDCF200DC59F5 /* x5fPmvc.m */,
+				B14C9A3C289BDCF200DC59F5 /* x5fPdb.h */,
+				B14C9A3D289BDCF200DC59F5 /* HBView.m */,
+				B14C9A3E289BDCF200DC59F5 /* HBWindow.m */,
+				B14C9A3F289BDCF200DC59F5 /* x5fPmc.mm */,
+				B14C9A40289BDCF200DC59F5 /* x5fPmc.h */,
+				B14C9A41289BDCF200DC59F5 /* x5fPdb.m */,
+				B14C9A42289BDCF200DC59F5 /* x5fPmvc.h */,
+				B14C9A43289BDCF200DC59F5 /* HBView.h */,
+				B14C9A44289BDCF200DC59F5 /* HBWindow.h */,
+			);
+			path = ball;
+			sourceTree = "<group>";
+		};
 		B1ED4A3F26943A7C006F643B = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +199,7 @@
 		B1ED4A4F26943A7D006F643B /* jbnew */ = {
 			isa = PBXGroup;
 			children = (
+				B14C9A3A289BDCF200DC59F5 /* ball */,
 				B1ED4A6426943A7D006F643B /* p_inc.h */,
 				B1ED4A6826943A7D006F643B /* jbnew.xm */,
 				B1373C2D2695A70C00EDB1F4 /* jbnew.mm */,
@@ -249,9 +287,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1373C892696F72700EDB1F4 /* NSObject+IOFamilyDlsym.h in Headers */,
+				B14C9A4C289BDCF200DC59F5 /* x5fPmvc.h in Headers */,
+				B14C9A4A289BDCF200DC59F5 /* x5fPmc.h in Headers */,
+				B14C9A4D289BDCF200DC59F5 /* HBView.h in Headers */,
 				B1EA8C3B26958FE20013A362 /* logCenter.h in Headers */,
 				B1EA8C442695962C0013A362 /* imageMatch.h in Headers */,
 				B1ED4A6526943A7D006F643B /* p_inc.h in Headers */,
+				B14C9A4E289BDCF200DC59F5 /* HBWindow.h in Headers */,
+				B14C9A46289BDCF200DC59F5 /* x5fPdb.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,10 +417,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B14C9A47289BDCF200DC59F5 /* HBView.m in Sources */,
 				B1ED4A7526943D6A006F643B /* threadAndAlert.mm in Sources */,
+				B14C9A48289BDCF200DC59F5 /* HBWindow.m in Sources */,
 				B1373C8A2696F72700EDB1F4 /* NSObject+IOFamilyDlsym.m in Sources */,
+				B14C9A49289BDCF200DC59F5 /* x5fPmc.mm in Sources */,
+				B14C9A4B289BDCF200DC59F5 /* x5fPdb.m in Sources */,
 				B1ED4A7826953EE9006F643B /* luafunc.mm in Sources */,
 				B1EA8C432695962C0013A362 /* imageMatch.mm in Sources */,
+				B14C9A45289BDCF200DC59F5 /* x5fPmvc.m in Sources */,
 				B1EA8C3C26958FE20013A362 /* logCenter.mm in Sources */,
 				B1373C2E2695A70C00EDB1F4 /* jbnew.mm in Sources */,
 			);
@@ -445,7 +493,7 @@
 			buildSettings = {
 				ARCHS = arm64e;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CODE_SIGN_IDENTITY = x5code;
+				CODE_SIGN_IDENTITY = "-";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_BITCODE = NO;
@@ -497,7 +545,7 @@
 			buildSettings = {
 				ARCHS = arm64e;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CODE_SIGN_IDENTITY = x5code;
+				CODE_SIGN_IDENTITY = "-";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_BITCODE = NO;

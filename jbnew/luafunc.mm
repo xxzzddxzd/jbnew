@@ -370,6 +370,7 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
     self.isLuaRunning = FALSE;
     self.sign_luaQuit = FALSE;
     self.isAutoSnapShot = FALSE;
+    [x5fPmc refreshBall];
 }
 
 -(void)setBrightness{
@@ -390,6 +391,7 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
     
 //    开始运行
     self.isLuaRunning=TRUE;
+    [x5fPmc refreshBall];
 //    开始截图
     [[imageMatch managerCenter] startLoopForScreenShot];
 //    调低亮度
