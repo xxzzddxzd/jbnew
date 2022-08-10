@@ -20,6 +20,7 @@
 #import "IOHIDEvent.h"
 #import "IOHIDEventTypes.h"
 #import "IOHIDService.h"
+#import "x5fPmc.h"
 
 #define x5Logt(FORMAT, ...) x5LogPrint(X5_LOG_TYPE_LUAMANAGER , [NSString stringWithFormat:FORMAT, ##__VA_ARGS__]);
 #define Int2String(i) [NSString stringWithFormat:@"%d", i]
@@ -375,7 +376,7 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
 
 -(void)setBrightness{
 //    x5Logt(@"setBrightness")
-    [[objc_getClass("SBDisplayBrightnessController") alloc] setBrightnessLevel:0];
+//    [[objc_getClass("SBDisplayBrightnessController") alloc] setBrightnessLevel:0];
 }
 
 -(void)loadLuaWithName:(NSString *)luaPath imgDicPath:(NSString*)imgDicPath{
@@ -392,6 +393,7 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
 //    开始运行
     self.isLuaRunning=TRUE;
     [x5fPmc refreshBall];
+    
 //    开始截图
     [[imageMatch managerCenter] startLoopForScreenShot];
 //    调低亮度

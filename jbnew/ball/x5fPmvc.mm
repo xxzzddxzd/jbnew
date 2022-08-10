@@ -4,18 +4,18 @@
 #import "x5fPdb.h"
 //#import "x5fPsvc.h"
 #import "p_inc.h"
+#import "luafunc.h"
 
-extern bool isLuaRunning;
 @interface x5fPmvc ()
-<
-UIGestureRecognizerDelegate
-//x5fPsuicd
->
+//<
+//UIGestureRecognizerDelegate
+////x5fPsuicd
+//>
 @property (retain, nonatomic) HBView *customView;
 @property (retain, nonatomic) UIView *panelView;
 @property (retain, nonatomic) x5fPdb *avatar;
 @end
-
+extern void getTouchFromBall();
 @implementation x5fPmvc
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -27,7 +27,11 @@ UIGestureRecognizerDelegate
     return self;
 }
 -(void)refreshIcon{
-    [self.avatar setImage:[self avatarGBImage] forState:UIControlStateNormal];
+    XLog(@"refresh icon 1  %@",self.avatar)
+//    UIImage * img =[self avatarGBImage];
+    XLog(@"refresh icon 2")
+//    [self.avatar setImage:img forState:UIControlStateNormal];
+    XLog(@"refresh icon done")
 }
 - (void)viewDidLoad
 {
@@ -118,8 +122,10 @@ XLog(@"3")
     if (self.avatar.isDragging) {
         return;
     }
-    
-    
+    getTouchFromBall();
+    UIImage * img =[self avatarGBImage];
+    XLog(@"setimg %@",img)
+    [self.avatar setImage:img forState:UIControlStateNormal];
     
     
 }
@@ -166,6 +172,7 @@ XLog(@"3")
 
 #pragma mark - Image
 - (UIImage *)avatarGBImage{
+    XLog(@"avatarGBImage")
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(46,46), NO, 0);
 
 
@@ -197,16 +204,19 @@ XLog(@"3")
     //// Text Drawing
     CGRect textRect = CGRectMake(8, 14, 30, 17);
     [color setFill];
-    if(!isLuaRunning){
-        [@"go" drawInRect: textRect withFont: [UIFont fontWithName: @"Helvetica-Bold" size: 13] lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
+    XLog(@"avatarGBImage check isluarunning")
+    if([[luaManager managerCenter] isLuaRunning]){
+        XLog(@"avatarGBImage set text go")
+        [@">"  drawInRect: textRect withFont: [UIFont fontWithName: @"Helvetica-Bold" size: 10] lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
     }else{
-        [@"stop" drawInRect: textRect withFont: [UIFont fontWithName: @"Helvetica-Bold" size: 13] lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
+        XLog(@"avatarGBImage set text stop")
+        [@"||"  drawInRect: textRect withFont: [UIFont fontWithName: @"Helvetica-Bold" size: 10] lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
     }
-
+//    [@"script"  drawInRect: textRect withFont: [UIFont fontWithName: @"Helvetica-Bold" size: 10] lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
 
     UIImage* im = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
+    XLog(@"avatarGBImage end")
     return im;
 }
 

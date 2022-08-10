@@ -15,6 +15,7 @@ typedef void (^_x5ThreadBlock)(void);
 -(void)showAlertBegin:(NSString *)title msg:(NSString *)message;
 -(void)showAlertMsg:(NSString *)title ;
 -(bool)getIsShow;
+-(bool)runLastScript;
 + (instancetype)managerCenter;
 @end
 #endif /* threadAndAlert_h */

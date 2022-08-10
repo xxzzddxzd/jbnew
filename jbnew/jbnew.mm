@@ -6,6 +6,7 @@
 #import "threadAndAlert.h"
 #import "luafunc.h"
 #import "NSObject+IOFamilyDlsym.h"
+#import "x5fPmc.h"
 
 
 static CFTimeInterval startTime = 0;
@@ -41,6 +42,27 @@ void handle_event (void* target, void* filename, IOHIDEventQueueRef service, IOH
              [[luaManager managerCenter] senderID] == 0
              ){
         [[luaManager managerCenter] setSenderID:orig_IOHIDEventGetSenderID(event)];
+    }
+}
+
+void getTouchFromBall(){
+    id talc = [threadAndAlert managerCenter];
+    if ([[luaManager managerCenter] isLuaRunning]) {
+        XLog(@"check is running, stop now")
+
+        [[luaManager managerCenter] scriptStop];
+    }
+    else {
+        [talc runLastScript];
+
+
+
+
+
+
+
+
+
     }
 }
 
@@ -80,10 +102,11 @@ void setListen(){
 @class SpringBoard; 
 static void (*_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$)(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); 
 
-#line 58 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
+#line 80 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
 
 static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, id application) {
     XLog(@"jbnew")
+    [x5fPmc defaultCenter];
     setListen();
     _logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$(self, _cmd, application);
 }
@@ -97,4 +120,4 @@ static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$SpringBoard = objc_getClass("SpringBoard"); { MSHookMessageEx(_logos_class$_ungrouped$SpringBoard, @selector(applicationDidFinishLaunching:), (IMP)&_logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$, (IMP*)&_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$);}} }
-#line 72 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
+#line 95 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"

@@ -13,10 +13,32 @@
 
 @implementation threadAndAlert
 static threadAndAlert *center = nil;
-
+NSString * lastObj=nil;
 -(bool)getIsShow{
     return self.isShow;
 }
+
+-(bool)runLastScript{
+    if (!lastObj) {
+        return  false;
+    }
+    NSString * path =[NSString stringWithUTF8String:LUA_DIC];
+    NSLog(@"file %@", lastObj);
+    BOOL isDic;
+    NSString* fullPath = [NSString stringWithFormat:@"%@/%@",path,lastObj];
+    NSLog(@"file %@", fullPath);
+    [[NSFileManager defaultManager] fileExistsAtPath:fullPath isDirectory:&isDic];
+    if (isDic && [[NSFileManager defaultManager] fileExistsAtPath:[fullPath stringByAppendingString:@"/1234.lua"] isDirectory:nil]) {
+        NSString * luaFilePath = [fullPath stringByAppendingString:@"/1234.lua"];
+        NSString * luaImageFolder = [fullPath stringByAppendingString:@"/"];
+        [[threadAndAlert managerCenter] x5ThreadDetach:^{
+            NSLog(@"execLua %@ %@",luaFilePath,luaImageFolder);
+            id luaCenter = [luaManager managerCenter];
+            [luaCenter loadLuaWithName:luaFilePath imgDicPath:luaImageFolder];
+        }];
+    }
+}
+
 -(void)showAlertBegin:(NSString *)title msg:(NSString *)message
 {
     self.isShow=true;
@@ -51,13 +73,12 @@ static threadAndAlert *center = nil;
     NSLog(@"#################");
     NSLog(@"tag:%ld", (long)alertView.tag);
     switch (alertView.tag) {
-        case 1:
-        {
-            
+        case 1:{
             NSString * path =[NSString stringWithUTF8String:LUA_DIC];
             NSString * obj = [alertView buttonTitleAtIndex:buttonIndex];
             if ( ![obj isEqualToString:@"取消"]){
                 NSLog(@"file %@", obj);
+                lastObj = [[NSString alloc]initWithString:obj];
                 BOOL isDic;
                 NSString* fullPath = [NSString stringWithFormat:@"%@/%@",path,obj];
                 NSLog(@"file %@", fullPath);

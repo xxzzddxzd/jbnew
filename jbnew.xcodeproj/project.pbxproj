@@ -21,7 +21,7 @@
 		B1373C812696DB7C00EDB1F4 /* CydiaSubstrate.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B1373C802696DB7C00EDB1F4 /* CydiaSubstrate.tbd */; };
 		B1373C892696F72700EDB1F4 /* NSObject+IOFamilyDlsym.h in Headers */ = {isa = PBXBuildFile; fileRef = B1373C872696F72700EDB1F4 /* NSObject+IOFamilyDlsym.h */; };
 		B1373C8A2696F72700EDB1F4 /* NSObject+IOFamilyDlsym.m in Sources */ = {isa = PBXBuildFile; fileRef = B1373C882696F72700EDB1F4 /* NSObject+IOFamilyDlsym.m */; };
-		B14C9A45289BDCF200DC59F5 /* x5fPmvc.m in Sources */ = {isa = PBXBuildFile; fileRef = B14C9A3B289BDCF200DC59F5 /* x5fPmvc.m */; };
+		B14C9A45289BDCF200DC59F5 /* x5fPmvc.mm in Sources */ = {isa = PBXBuildFile; fileRef = B14C9A3B289BDCF200DC59F5 /* x5fPmvc.mm */; };
 		B14C9A46289BDCF200DC59F5 /* x5fPdb.h in Headers */ = {isa = PBXBuildFile; fileRef = B14C9A3C289BDCF200DC59F5 /* x5fPdb.h */; };
 		B14C9A47289BDCF200DC59F5 /* HBView.m in Sources */ = {isa = PBXBuildFile; fileRef = B14C9A3D289BDCF200DC59F5 /* HBView.m */; };
 		B14C9A48289BDCF200DC59F5 /* HBWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B14C9A3E289BDCF200DC59F5 /* HBWindow.m */; };
@@ -75,7 +75,7 @@
 		B1373C802696DB7C00EDB1F4 /* CydiaSubstrate.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = CydiaSubstrate.tbd; path = ../../../../../opt/theos/vendor/lib/CydiaSubstrate.framework/CydiaSubstrate.tbd; sourceTree = "<group>"; };
 		B1373C872696F72700EDB1F4 /* NSObject+IOFamilyDlsym.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+IOFamilyDlsym.h"; sourceTree = "<group>"; };
 		B1373C882696F72700EDB1F4 /* NSObject+IOFamilyDlsym.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IOFamilyDlsym.m"; sourceTree = "<group>"; };
-		B14C9A3B289BDCF200DC59F5 /* x5fPmvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = x5fPmvc.m; sourceTree = "<group>"; };
+		B14C9A3B289BDCF200DC59F5 /* x5fPmvc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = x5fPmvc.mm; sourceTree = "<group>"; };
 		B14C9A3C289BDCF200DC59F5 /* x5fPdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x5fPdb.h; sourceTree = "<group>"; };
 		B14C9A3D289BDCF200DC59F5 /* HBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBView.m; sourceTree = "<group>"; };
 		B14C9A3E289BDCF200DC59F5 /* HBWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBWindow.m; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		B14C9A3A289BDCF200DC59F5 /* ball */ = {
 			isa = PBXGroup;
 			children = (
-				B14C9A3B289BDCF200DC59F5 /* x5fPmvc.m */,
+				B14C9A3B289BDCF200DC59F5 /* x5fPmvc.mm */,
 				B14C9A3C289BDCF200DC59F5 /* x5fPdb.h */,
 				B14C9A3D289BDCF200DC59F5 /* HBView.m */,
 				B14C9A3E289BDCF200DC59F5 /* HBWindow.m */,
@@ -425,7 +425,7 @@
 				B14C9A4B289BDCF200DC59F5 /* x5fPdb.m in Sources */,
 				B1ED4A7826953EE9006F643B /* luafunc.mm in Sources */,
 				B1EA8C432695962C0013A362 /* imageMatch.mm in Sources */,
-				B14C9A45289BDCF200DC59F5 /* x5fPmvc.m in Sources */,
+				B14C9A45289BDCF200DC59F5 /* x5fPmvc.mm in Sources */,
 				B1EA8C3C26958FE20013A362 /* logCenter.mm in Sources */,
 				B1373C2E2695A70C00EDB1F4 /* jbnew.mm in Sources */,
 			);
@@ -457,9 +457,11 @@
 				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				OTHER_CFLAGS = "-Wobjc-property-no-attribute";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;
+				WARNING_CFLAGS = "";
 				iOSOpenDevPath = /opt/iOSOpenDev;
 			};
 			name = Debug;
@@ -480,9 +482,11 @@
 				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				OTHER_CFLAGS = "-Wobjc-property-no-attribute";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "";
 				iOSOpenDevPath = /opt/iOSOpenDev;
 			};
 			name = Release;
@@ -493,7 +497,7 @@
 			buildSettings = {
 				ARCHS = arm64e;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = x5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_BITCODE = NO;
@@ -511,6 +515,7 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/jbnew/f",
@@ -545,7 +550,7 @@
 			buildSettings = {
 				ARCHS = arm64e;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = x5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_BITCODE = NO;
@@ -563,6 +568,7 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 				);
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/jbnew/f",

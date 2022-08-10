@@ -643,6 +643,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+				WARNING_CFLAGS = "-Wno-objc-property-no-attribute";
 			};
 			name = Release;
 		};
@@ -709,6 +710,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+				WARNING_CFLAGS = "-Wno-objc-property-no-attribute";
 			};
 			name = Debug;
 		};

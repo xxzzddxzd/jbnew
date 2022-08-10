@@ -33,7 +33,7 @@
 -(void)luaClean;
 @end
 
-extern bool isLuaRunning;
+
 
 void scriptStop();
 

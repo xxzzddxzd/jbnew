@@ -5,6 +5,7 @@
 #import "threadAndAlert.h"
 #import "luafunc.h"
 #import "NSObject+IOFamilyDlsym.h"
+#import "x5fPmc.h"
 
 
 static CFTimeInterval startTime = 0;
@@ -40,6 +41,27 @@ void handle_event (void* target, void* filename, IOHIDEventQueueRef service, IOH
              [[luaManager managerCenter] senderID] == 0
              ){
         [[luaManager managerCenter] setSenderID:orig_IOHIDEventGetSenderID(event)];
+    }
+}
+
+void getTouchFromBall(){
+    id talc = [threadAndAlert managerCenter];
+    if ([[luaManager managerCenter] isLuaRunning]) {
+        XLog(@"check is running, stop now")
+//        [talc showAlertMsg:@"Stop"];
+        [[luaManager managerCenter] scriptStop];
+    }
+    else {
+        [talc runLastScript];
+//        if (currentTime - startTime > 0.4){
+//            startTime = CACurrentMediaTime();
+//            return;
+//        }
+//        if([talc isShow] == FALSE){
+////                    XLog(@"isShow == FALSE")
+//            XLog(@"not running, show menu")
+//            [talc showAlertBegin:nil msg:nil];
+//        }
     }
 }
 
