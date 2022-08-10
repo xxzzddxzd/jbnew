@@ -1,4 +1,4 @@
-#line 1 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
+#line 1 "/Users/xuzhengda/Documents/Github/jbnew/jbnew/jbnew.xm"
 #import "p_inc.h"
 #import <objc/message.h>
 #include <dlfcn.h>
@@ -102,7 +102,7 @@ void setListen(){
 @class SpringBoard; 
 static void (*_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$)(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST, SEL, id); 
 
-#line 80 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
+#line 80 "/Users/xuzhengda/Documents/Github/jbnew/jbnew/jbnew.xm"
 
 static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(_LOGOS_SELF_TYPE_NORMAL SpringBoard* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd, id application) {
     XLog(@"jbnew")
@@ -120,4 +120,4 @@ static void _logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$(
 
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$SpringBoard = objc_getClass("SpringBoard"); { MSHookMessageEx(_logos_class$_ungrouped$SpringBoard, @selector(applicationDidFinishLaunching:), (IMP)&_logos_method$_ungrouped$SpringBoard$applicationDidFinishLaunching$, (IMP*)&_logos_orig$_ungrouped$SpringBoard$applicationDidFinishLaunching$);}} }
-#line 95 "/Users/xuzhengda/Documents/GitHub/jbnew/jbnew/jbnew.xm"
+#line 95 "/Users/xuzhengda/Documents/Github/jbnew/jbnew/jbnew.xm"

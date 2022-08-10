@@ -63,8 +63,6 @@ extern "C" {
 #endif
 	* IOHIDEventSystemClientRef;
 	
-	typedef struct __IOHIDEventSystemConnection * IOHIDEventSystemConnectionRef;
-
 	typedef void(*IOHIDEventSystemClientEventCallback)(void* target, void* refcon, IOHIDEventQueueRef queue, IOHIDEventRef event);
 	
 	void IOHIDEventSystemClientRegisterEventCallback(IOHIDEventSystemClientRef client, IOHIDEventSystemClientEventCallback callback, void* target, void* refcon);
@@ -77,10 +75,7 @@ extern "C" {
 	Boolean IOHIDEventSystemClientSetProperty(IOHIDEventSystemClientRef client, CFStringRef property, CFPropertyListRef value);
 	
 	IOHIDEventSystemClientRef IOHIDEventSystemClient(void);
-	IOHIDEventSystemClientRef IOHIDEventSystemClientCreate(CFAllocatorRef allocator);
-	void IOHIDEventSystemClientDispatchEvent(IOHIDEventSystemClientRef client, IOHIDEventRef event);
-    void IOHIDEventSystemConnectionDispatchEvent(IOHIDEventSystemConnectionRef connection, IOHIDEventRef event);
-
+	
 #if __cplusplus
 }
 #endif

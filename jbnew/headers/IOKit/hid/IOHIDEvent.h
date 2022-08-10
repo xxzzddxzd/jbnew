@@ -35,10 +35,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef IOKIT_HID_IOHIDEVENT_H
 #define IOKIT_HID_IOHIDEVENT_H 1
 
-// #include <libkern/OSTypes.h>
-#include "IOTypes.h"
-#include "IOHIDEventTypes.h"
-#include "IOHIDEventData.h"
+//#include <libkern/OSTypes.h>
+#include <IOKit/IOTypes.h>
+#include <IOKit/hid/IOHIDEventTypes.h>
+#include <IOKit/hid/IOHIDEventData.h>
 #include <CoreFoundation/CoreFoundation.h>
 
 #if __cplusplus
@@ -49,7 +49,7 @@ extern "C" {
 #if 0
 	{
 		CFRuntimeBase base;	// 0, 4
-		uint64_t _timeStamp;	// 8, c
+		AbsoluteTime _timeStamp;	// 8, c
 		int x10;	// 10
 		int x14;	// 14
 		IOOptionBits _options;	// 18
@@ -76,7 +76,7 @@ extern "C" {
 	/*! @function IOHIDEventCreate
 	 @abstract Create an IOHIDEvent.
 	 @discussion All event-specific parameters are zeroed. */
-	IOHIDEventRef IOHIDEventCreate(CFAllocatorRef allocator, IOHIDEventType type, uint64_t timeStamp, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreate(CFAllocatorRef allocator, IOHIDEventType type, AbsoluteTime timeStamp, IOOptionBits options);
 	
 	CFMutableDataRef IOHIDEventCreateData(CFAllocatorRef allocator, IOHIDEventRef event);
 	IOHIDEventRef IOHIDEventCreateWithData(CFAllocatorRef allocator, CFDataRef data);
@@ -84,19 +84,19 @@ extern "C" {
 #pragma mark -
 #pragma mark Predefined creation functions
 	
-	IOHIDEventRef IOHIDEventCreateProgressEvent(CFAllocatorRef allocator, uint64_t timeStamp,
+	IOHIDEventRef IOHIDEventCreateProgressEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp,
 												uint32_t eventType, IOHIDFloat level, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateVendorDefinedEvent(CFAllocatorRef allocator, uint64_t timeStamp,
+	IOHIDEventRef IOHIDEventCreateVendorDefinedEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp,
 													 uint16_t usagePage, uint16_t usage, uint32_t version, const uint8_t* data, uint32_t length, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateSwipeEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDSwipeMask swipeMask, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateSwipeEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDSwipeMask swipeMask, IOOptionBits options);
 	
 	/*! @function IOHIDEventCreateDigitizerEvent
 	 @abstract Create a digitizer event. You should use the more specialized methods instead. */
-	IOHIDEventRef IOHIDEventCreateDigitizerEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDDigitizerTransducerType type,
+	IOHIDEventRef IOHIDEventCreateDigitizerEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDDigitizerTransducerType type,
 												 uint32_t index, uint32_t identity, uint32_t eventMask, uint32_t buttonMask,
 												 IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOHIDFloat tipPressure, IOHIDFloat barrelPressure,
 												 Boolean range, Boolean touch, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateDigitizerFingerEventWithQuality(CFAllocatorRef allocator, uint64_t timeStamp,
+	IOHIDEventRef IOHIDEventCreateDigitizerFingerEventWithQuality(CFAllocatorRef allocator, AbsoluteTime timeStamp,
 																  uint32_t index, uint32_t identity, uint32_t eventMask,
 																  IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOHIDFloat tipPressure, IOHIDFloat twist,
 																  IOHIDFloat minorRadius, IOHIDFloat majorRadius, IOHIDFloat quality, IOHIDFloat density, IOHIDFloat irregularity,
@@ -109,62 +109,62 @@ extern "C" {
 	  - quality = 1,
 	  - density = 1,
 	  - irregularity = 1. */
-	IOHIDEventRef IOHIDEventCreateDigitizerFingerEvent(CFAllocatorRef allocator, uint64_t timeStamp,
+	IOHIDEventRef IOHIDEventCreateDigitizerFingerEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp,
 													   uint32_t index, uint32_t identity, uint32_t eventMask,
 													   IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOHIDFloat tipPressure, IOHIDFloat twist,
 													   Boolean range, Boolean touch, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateDigitizerStylusEventWithPolarOrientation(CFAllocatorRef allocator, uint64_t timeStamp,
+	IOHIDEventRef IOHIDEventCreateDigitizerStylusEventWithPolarOrientation(CFAllocatorRef allocator, AbsoluteTime timeStamp,
 																		   uint32_t index, uint32_t identity, uint32_t eventMask, uint32_t buttonMask,
 																		   IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOHIDFloat tipPressure, IOHIDFloat barrelPressure,
 																		   IOHIDFloat twist, IOHIDFloat altitude, IOHIDFloat azimuth, 
 																		   Boolean range, Boolean invert, IOOptionBits options);
 	/*! @function IOHIDEventCreateDigitizerStylusEvent
 	 @discussion Same as IOHIDEventCreateDigitizerStylusEventWithPolarOrientation? */
-	IOHIDEventRef IOHIDEventCreateDigitizerStylusEvent(CFAllocatorRef allocator, uint64_t timeStamp,
+	IOHIDEventRef IOHIDEventCreateDigitizerStylusEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp,
 													   uint32_t index, uint32_t identity, uint32_t eventMask, uint32_t buttonMask,
 													   IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOHIDFloat tipPressure, IOHIDFloat barrelPressure,
 													   IOHIDFloat twist, IOHIDFloat altitude, IOHIDFloat azimuth, 
 													   Boolean range, Boolean invert, IOOptionBits options);
 
-	IOHIDEventRef IOHIDEventCreateProximtyEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDProximityDetectionMask detectionMask, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateProximtyEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDProximityDetectionMask detectionMask, IOOptionBits options);
 #define IOHIDEventCreateProximityEvent IOHIDEventCreateProximtyEvent
-	IOHIDEventRef IOHIDEventCreateAmbientLightSensorEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDFloat level, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateAmbientLightSensorEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDFloat level, IOOptionBits options);
 	
 	/*! @function IOHIDEventCreateMouseEvent
 	 @abstract Create an mouse event, with pressure of 1.0. */
-	IOHIDEventRef IOHIDEventCreateMouseEvent(CFAllocatorRef allocator, uint64_t timeStamp,
+	IOHIDEventRef IOHIDEventCreateMouseEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp,
 											 IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, uint32_t buttonMask, IOOptionBits options);
 	/*! @function IOHIDEventCreateMouseEventWithPressure
 	 @abstract Create an mouse event with pressure.
 	 @discussion The mouse is considered clicked when the pressure is > 0.15. */
-	IOHIDEventRef IOHIDEventCreateMouseEventWithPressure(CFAllocatorRef allocator, uint64_t timeStamp,
+	IOHIDEventRef IOHIDEventCreateMouseEventWithPressure(CFAllocatorRef allocator, AbsoluteTime timeStamp,
 														 IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, uint32_t buttonMask, IOHIDFloat pressure, IOOptionBits options);
 	/*! @function IOHIDEventCreateButtonEvent
 	 @abstract Create an button event, with pressure of 1.0. */
-	IOHIDEventRef IOHIDEventCreateButtonEvent(CFAllocatorRef allocator, uint64_t timeStamp, uint32_t buttonMask, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateButtonEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, uint32_t buttonMask, IOOptionBits options);
 	/*! @function IOHIDEventCreateButtonEventWithPressure
 	 @abstract Create an button event with pressure.
 	 @discussion The button is considered pressed when the pressure is > 0.15. */
-	IOHIDEventRef IOHIDEventCreateButtonEventWithPressure(CFAllocatorRef allocator, uint64_t timeStamp, uint32_t buttonMask, IOHIDFloat pressure, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateButtonEventWithPressure(CFAllocatorRef allocator, AbsoluteTime timeStamp, uint32_t buttonMask, IOHIDFloat pressure, IOOptionBits options);
 
-	IOHIDEventRef IOHIDEventCreateKeyboardEvent(CFAllocatorRef allocator, uint64_t timeStamp, uint16_t usagePage, uint16_t usage, Boolean down, IOHIDEventOptionBits flags);
+	IOHIDEventRef IOHIDEventCreateKeyboardEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, uint16_t usagePage, uint16_t usage, Boolean down, IOHIDEventOptionBits flags);
 	
-	IOHIDEventRef IOHIDEventCreateAccelerometerEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreatePolarOrientationEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateOrientationEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateVelocityEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateScaleEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateScrollEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateRotationEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
-	IOHIDEventRef IOHIDEventCreateTranslationEvent(CFAllocatorRef allocator, uint64_t timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateAccelerometerEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreatePolarOrientationEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateOrientationEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateVelocityEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateScaleEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateScrollEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateRotationEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
+	IOHIDEventRef IOHIDEventCreateTranslationEvent(CFAllocatorRef allocator, AbsoluteTime timeStamp, IOHIDFloat x, IOHIDFloat y, IOHIDFloat z, IOOptionBits options);
 	
 #pragma mark -
 #pragma mark Accessors
 	
 	IOHIDEventType IOHIDEventGetType(IOHIDEventRef event);
 	
-	uint64_t IOHIDEventGetTimeStamp(IOHIDEventRef event);
-	void IOHIDEventSetTimeStamp(IOHIDEventRef event, uint64_t timeStamp);
+	AbsoluteTime IOHIDEventGetTimeStamp(IOHIDEventRef event);
+	void IOHIDEventSetTimeStamp(IOHIDEventRef event, AbsoluteTime timeStamp);
 	
 	uint32_t IOHIDEventGetEventFlags(IOHIDEventRef event);
 	void IOHIDEventSetEventFlags(IOHIDEventRef event, uint32_t eventFlags);
@@ -193,9 +193,7 @@ extern "C" {
 	void IOHIDEventSetIntegerValue(IOHIDEventRef event, IOHIDEventField field, int value);
 	void IOHIDEventSetPositionWithOptions(IOHIDEventRef event, IOHIDEventField field, IOHID3DPoint position, IOOptionBits options);
 	void IOHIDEventSetPosition(IOHIDEventRef event, IOHIDEventField field, IOHID3DPoint position);
-	void IOHIDEventSetSenderID(IOHIDEventRef event, uint64_t senderID);
-    uint64_t IOHIDEventGetSenderID(IOHIDEventRef event);
-
+	
 	IOHIDFloat IOHIDEventGetFloatValueWithOptions(IOHIDEventRef event, IOHIDEventField field, IOOptionBits options);
 	IOHIDFloat IOHIDEventGetFloatValue(IOHIDEventRef event, IOHIDEventField field);
 	int IOHIDEventGetIntegerValueWithOptions(IOHIDEventRef event, IOHIDEventField field, IOOptionBits options);

@@ -25,15 +25,15 @@
 #ifndef _IOKIT_HID_IOHIDEVENTDATA_H
 #define _IOKIT_HID_IOHIDEVENTDATA_H
 
-#include "IOTypes.h"
-#include "IOHIDEventTypes.h"
+#include <IOKit/IOTypes.h>
+#include <IOKit/hid/IOHIDEventTypes.h>
 
 #ifdef KERNEL
     #include <IOKit/IOLib.h>
 
     #define IOHIDEventRef IOHIDEvent *
 #else
-    #include "IOHIDEvent.h"
+    #include <IOKit/hid/IOHIDEvent.h>
 
     typedef struct IOHIDEventData IOHIDEventData;
 #endif

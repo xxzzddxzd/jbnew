@@ -25,7 +25,7 @@
 #ifndef _IOKIT_HID_IOHIDEVENTTYPES_H
 #define _IOKIT_HID_IOHIDEVENTTYPES_H
 
-#include "IOTypes.h"
+#include <IOKit/IOTypes.h>
 
 #define IOHIDEventTypeMask(type) (1<<type)
 #define IOHIDEventFieldBase(type) (type << 16)
@@ -85,11 +85,7 @@ typedef uint32_t IOHIDEventType;
 */
 enum {
     kIOHIDEventFieldIsRelative = IOHIDEventFieldBase(kIOHIDEventTypeNULL),
-    kIOHIDEventFieldIsCollection,
-    kIOHIDEventFieldIsPixelUnits,
-    kIOHIDEventFieldIsCenterOrigin,
-    kIOHIDEventFieldIsBuiltIn
-
+    kIOHIDEventFieldIsCollection
 };
 
 enum {
@@ -222,8 +218,7 @@ enum {
     kIOHIDEventFieldDigitizerMinorRadius,
     kIOHIDEventFieldDigitizerCollection,
     kIOHIDEventFieldDigitizerCollectionChord,
-    kIOHIDEventFieldDigitizerChildEventMask,
-    kIOHIDEventFieldDigitizerIsDisplayIntegrated
+    kIOHIDEventFieldDigitizerChildEventMask
 };
 
 enum {

@@ -17,9 +17,9 @@
 #import "p_inc.h"
 #import "logCenter.h"
 #import "NSObject+IOFamilyDlsym.h"
-#import "IOHIDEvent.h"
-#import "IOHIDEventTypes.h"
-#import "IOHIDService.h"
+#import "IOKit/hid/IOHIDEvent.h"
+//#import "IOHIDEventTypes.h"
+//#import "IOHIDService.h"
 #import "x5fPmc.h"
 
 #define x5Logt(FORMAT, ...) x5LogPrint(X5_LOG_TYPE_LUAMANAGER , [NSString stringWithFormat:FORMAT, ##__VA_ARGS__]);
@@ -193,6 +193,12 @@ static int lSetBrightness(lua_State * L)
     return 0;
 }
 
+//static int lSetTouchOnly(lua_State * L)
+//{
+////    [[luaManager managerCenter] setBrightness];
+//    return 0;
+//}
+
 NSString * nextImgToSavesFileName = nil;
 static int lCaptureScreenAndSaveToFile(lua_State * L)
 {
@@ -360,6 +366,8 @@ IOFamilyDlsym * iokit = [IOFamilyDlsym defaultManager];
     lua_register(self.L, "isLuaRunning",lIsLuaRunning);
     lua_register(self.L, "launchByID",lLaunchAppByBundleID);
     lua_register(self.L, "setBrightness",lSetBrightness);
+//    不识别图像，仅点击。for diablo immortal
+//    lua_register(self.L, "setTouchOnly", lSetTouchOnly);
 //    lua_register(self.L, "getFileList",lGetFileList);
 //    lua_register(self.L, "getFileListPath",lGetFileListPath);
 //    lua_register(self.L, "writeLineToFile",lWriteLineToFile);

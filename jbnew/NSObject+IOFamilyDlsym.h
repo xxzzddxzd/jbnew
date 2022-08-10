@@ -6,8 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IOHIDEvent.h"
-#import "IOHIDEventSystemClient.h"
+#import "IOKit/hid/IOHIDEvent.h"
+#import "IOKit/hid/IOHIDEventSystemClient.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
