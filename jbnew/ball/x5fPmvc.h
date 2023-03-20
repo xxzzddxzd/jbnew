@@ -5,4 +5,6 @@
 @interface x5fPmvc : UIViewController  //XXModViewController
 
 -(void)refreshIcon;
+- (void)showavatar;
+- (void)hideModeAction;
 @end

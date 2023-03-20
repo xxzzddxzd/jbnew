@@ -34,7 +34,8 @@ static imageMatch *center = nil;
 
 -(BOOL)UIImgCmp:(UIImage *) img1 img2:(UIImage *)img2 method:(int)method x:(double *)x y:(double *)y min:(double *) min max:(double *) max{
     BOOL rev;
-    rev = [self matchImages:img1 Image2:img2 Method:method MinRev:min MaxRev:max xRev:x yRev:y];
+//    rev = [self matchImages:img1 Image2:img2 Method:method MinRev:min MaxRev:max xRev:x yRev:y];
+    rev = [self matchImages_gpt:img1 Image2:img2 Method:method MinRev:min MaxRev:max xRev:x yRev:y];
     x5Logt(@"****************** UIImgCmp rev %d", rev);
     return rev;
 }
@@ -63,7 +64,65 @@ static imageMatch *center = nil;
     return cvMat;
 }
 
+-(BOOL) matchImages_gpt:(UIImage*)largerImage Image2:(UIImage*)subImage Method:(int)match_method MinRev:(double*)minf MaxRev:(double*)maxf xRev:(double*)xr yRev:(double*)yr{
+    x5Logt(@"matchImages_gpt");
+    if (largerImage == nil) {
+        x5Logt(@"large nil");
+        return NO;
+    }
+    
+    if (subImage == nil) {
+        x5Logt(@"sub nil");
+        return NO;
+    }
+    // 将UIImage对象转换为cv::Mat对象
+//    NSData *largerImageData = UIImagePNGRepresentation(largerImage);
+    cv::Mat largerMat = [self CVMat:largerImage];
+    
+//    NSData *subImageData = UIImagePNGRepresentation(subImage);
+    cv::Mat subMat = [self CVMat:subImage];
+    
+    // 将cv::Mat对象转换为灰度图像
+    cv::Mat largerGrayMat, subGrayMat;
+    cv::cvtColor(largerMat, largerGrayMat, cv::COLOR_RGBA2GRAY);
+    cv::cvtColor(subMat, subGrayMat, cv::COLOR_RGBA2GRAY);
+    
+    // 计算匹配结果矩阵
+    cv::Mat matchResult;
+    cv::matchTemplate(largerGrayMat, subGrayMat, matchResult, match_method);
+    
+    // 寻找矩阵中的最大值和最小值
+    double minVal, maxVal;
+    cv::Point minLoc, maxLoc;
+    cv::minMaxLoc(matchResult, &minVal, &maxVal, &minLoc, &maxLoc);
+    
+    
+    x5Logt(@"matchImages_gpt %d tempMat1 = %p, tempMat2 = %p, result = %p", match_method,&largerMat, &subMat, &matchResult);
+    x5Logt(@"matchImages_gpt minVal %f  maxVal %f x,y:%d,%d ", minVal,maxVal,maxLoc.x,maxLoc.y)
+    // 判断小图是否为大图的子图
+    double threshold = 0.99999; // 阈值可以根据实际情况调整
+    if (maxVal >= threshold) {
+        *minf = minVal;
+        *maxf = maxVal;
+        *xr = maxLoc.x;
+        *yr = maxLoc.y;
+        return YES;
+    } else {
+        *minf = 0.0;
+        *maxf = 0.0;
+        *xr = 0.0;
+        *yr = 0.0;
+        return NO;
+    }
+    
+    // 释放cv::Mat对象
+//    largerMat.release();
+//    subMat.release();
+//    largerGrayMat.release();
+//    subGrayMat.release();
+//    matchResult.release();
 
+}
 -(BOOL) matchImages:(UIImage*)largerImage Image2:(UIImage*)subImage Method:(int)match_method MinRev:(double*)minf MaxRev:(double*)maxf xRev:(double*)xr yRev:(double*)yr
 {
 #if 1
@@ -128,7 +187,7 @@ static imageMatch *center = nil;
     result.deallocate();
         x5Logt(@"match_method%d tempMat1 = %p, tempMat2 = %p, result = %p", match_method,&tempMat1, &tempMat2, &result);
     
-    x5Logt(@"minf %f",*minf)
+    x5Logt(@"minf match_method:%d  rev:%f",match_method, *minf)
     switch (match_method) {
         case 1:
             
@@ -228,7 +287,7 @@ static imageMatch *center = nil;
                 return;
             }
             
-            *rev = [self UIImgCmp:nowPart img2:imgToFind method:1 x:&revX y:&revY min:&revMin max:&revMax];
+            *rev = [self UIImgCmp:nowPart img2:imgToFind method:3 x:&revX y:&revY min:&revMin max:&revMax];
             x5Logt(@"Finish cmp res = %d",*rev);
             
             if(*rev==1)

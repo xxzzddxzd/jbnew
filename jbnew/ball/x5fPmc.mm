@@ -48,15 +48,19 @@
 {
     NSLog(@"set show");
     static x5fPmc * mc = [self defaultCenter];
-    mc.centerWindow.hidden = NO;
-    
+    if (mc->_modRootVC) {
+        [mc->_modRootVC showavatar];
+    }
+//    mc.centerWindow.hidden = NO;
 }
 
 + (void)hiddenIcon
 {
     NSLog(@"set hidden");
     static x5fPmc * mc = [self defaultCenter];
-    mc.centerWindow.hidden = YES;
+    if (mc->_modRootVC) {
+        [mc->_modRootVC hideModeAction];
+    }
 }
 
 
@@ -73,7 +77,7 @@
         self.centerWindow = [[HBWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         self.centerWindow.backgroundColor = [UIColor clearColor];
         self.modRootVC = [[x5fPmvc alloc] init];
-
+//        [self.modRootVC hideModeAction];
         
         self.centerWindow.rootViewController = self.modRootVC;
         self.centerWindow.windowLevel = UIWindowLevelStatusBar;

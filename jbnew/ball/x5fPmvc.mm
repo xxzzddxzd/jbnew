@@ -114,7 +114,7 @@ XLog(@"3")
 }
 
 
-
+static CFTimeInterval startTime = 0;
 #pragma mark - Action Handler
 //点击事件
 - (void)toggleAppearPanel:(id)sender
@@ -122,12 +122,18 @@ XLog(@"3")
     if (self.avatar.isDragging) {
         return;
     }
-    getTouchFromBall();
-    UIImage * img =[self avatarGBImage];
-    XLog(@"setimg %@",img)
-    [self.avatar setImage:img forState:UIControlStateNormal];
-    
-    
+    CFTimeInterval currentTime = CACurrentMediaTime();
+    if (currentTime - startTime > 0.4){
+//        单击
+        startTime = CACurrentMediaTime();
+        getTouchFromBall();
+        UIImage * img =[self avatarGBImage];
+        XLog(@"setimg %@",img)
+        [self.avatar setImage:img forState:UIControlStateNormal];
+    }else{
+//        双击
+        self.avatar.hidden = YES;
+    }
 }
 //- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 //{
@@ -160,8 +166,12 @@ XLog(@"3")
 
 - (void)hideModeAction
 {
-    [self toggleAppearPanel:nil];
+//    [self toggleAppearPanel:nil];
     self.avatar.hidden = YES;
+}
+- (void)showavatar
+{
+    self.avatar.hidden = NO;
 }
 
 #pragma mark - Gesture Recognizer Delegate

@@ -80,7 +80,7 @@ void setListen(){
 %hook SpringBoard
 -(void)applicationDidFinishLaunching:(id)application {
     XLog(@"jbnew")
-    [x5fPmc defaultCenter];
+//    [x5fPmc defaultCenter];
     setListen();
     %orig;
 }
